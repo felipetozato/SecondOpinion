@@ -3,6 +3,9 @@ using SecondOpinion.Models;
 using Splat;
 using UIKit;
 using SecondOpinion.Repositories;
+using SecondOpinion.Services;
+using System.Reactive.Linq;
+using System;
 
 namespace SecondOpinion.iOS
 {
@@ -81,7 +84,11 @@ namespace SecondOpinion.iOS
         /// </summary>
         /// <returns><c>true</c>, if is logged in was usered, <c>false</c> otherwise.</returns>
         public bool IsUserLoggedIn() {
-            return currentUser != null;
+            if (currentUser == null) {
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 }

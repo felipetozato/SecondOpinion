@@ -1,9 +1,9 @@
 ﻿using System;
-using IntenseCare.ViewModels;
+using SecondOpinion.ViewModels;
 using ReactiveUI;
 using UIKit;
 
-namespace SecondOpinion.iOS.Views.Login
+namespace SecondOpinion.iOS.Views
 {
     public partial class LoginViewController : BaseViewController<LoginViewModel>
     {
@@ -18,7 +18,16 @@ namespace SecondOpinion.iOS.Views.Login
             // Perform any additional setup after loading the view, typically from a nib.
             ShouldDispose(this.Bind(ViewModel, vm => vm.EmailAddress, view => view.email.Text),
                           this.Bind(ViewModel, vm => vm.Password, view => view.password.Text),
-                          this.BindCommand(ViewModel, vm => vm.LoginCommand, view => view.loginButton));
+                          this.BindCommand(ViewModel, vm => vm.LoginCommand, view => view.loginButton),
+                          ViewModel.LoginCommand.Subscribe(OnLoginResult));
+        }
+
+        private void OnLoginResult(bool worked) {
+            var storyboard = UIStoryboard.FromName("Main" , null);
+            var vc = storyboard.InstantiateInitialViewController();
+            if (worked) {
+                PresentViewController(vc , true , null);    
+            }
         }
 
         public override void DidReceiveMemoryWarning() {

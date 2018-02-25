@@ -11,36 +11,31 @@ using UIKit;
 
 namespace SecondOpinion.iOS.Views
 {
-    [Register ("LoginViewController")]
-    partial class LoginViewController
+    [Register ("UserListViewController")]
+    partial class UserListViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField email { get; set; }
+        UIKit.UIBarButtonItem CancelButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton loginButton { get; set; }
+        UIKit.UITableView UserTable { get; set; }
 
-        [Outlet]
+        [Action ("OnCancelClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField password { get; set; }
+        partial void OnCancelClick (UIKit.UIBarButtonItem sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (email != null) {
-                email.Dispose ();
-                email = null;
+            if (CancelButton != null) {
+                CancelButton.Dispose ();
+                CancelButton = null;
             }
 
-            if (loginButton != null) {
-                loginButton.Dispose ();
-                loginButton = null;
-            }
-
-            if (password != null) {
-                password.Dispose ();
-                password = null;
+            if (UserTable != null) {
+                UserTable.Dispose ();
+                UserTable = null;
             }
         }
     }

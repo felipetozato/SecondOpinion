@@ -12,15 +12,31 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LoginRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserLogin.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\Aoi\ApiCoordnator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\Aoi\ILoginApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Api\ApiCoordnator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Api\ILoginApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\ISettingsRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\SettingsRepository.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChatListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DialogListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserContact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrivateMessageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Message.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IRouter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Page.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Api\IChatApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SingleThreadTaskScheduler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DisposeHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Api\IUserApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LaunchViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\ISharedPreferences.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\SharedPreferencesReposiory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PreferencesKeys.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Services\Aoi\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />
     <Folder Include="$(MSBuildThisFileDirectory)Repositories\" />
     <Folder Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

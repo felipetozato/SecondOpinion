@@ -7,15 +7,21 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
-namespace SecondOpinion.iOS.Views.ChatList
+namespace SecondOpinion.iOS.Views
 {
     [Register ("ChatListViewController")]
-    partial class ChatListViewController
+    partial class DialogListViewController
     {
+        [Outlet]
+        UIKit.UITableView ListView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (ListView != null) {
+                ListView.Dispose ();
+                ListView = null;
+            }
         }
     }
 }

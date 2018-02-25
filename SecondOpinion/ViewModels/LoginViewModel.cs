@@ -2,13 +2,13 @@
 using System.Reactive;
 using ReactiveUI;
 using System.Threading.Tasks;
-using IntenseCare.Services.Api;
 using SecondOpinion.Repositories;
 using Splat;
+using SecondOpinion.Services.Api;
 
-namespace IntenseCare.ViewModels
+namespace SecondOpinion.ViewModels
 {
-    public class LoginViewModel : ReactiveObject
+    public class LoginViewModel : BaseViewModel
     {
 
         private string _emailAddress;
@@ -23,13 +23,16 @@ namespace IntenseCare.ViewModels
             set => this.RaiseAndSetIfChanged(ref _password, value);
         }
 
-        public ReactiveCommand<Unit, Unit> LoginCommand;
+        public ReactiveCommand<Unit, bool> LoginCommand;
+
+        private ISharedPreferences sharedPreferences;
 
         public LoginViewModel() {
             LoginCommand = ReactiveCommand.CreateFromTask(DoLogin);
+            sharedPreferences = Locator.Current.GetService<ISharedPreferences>();
         }
 
-        private async Task DoLogin() {
+        private async Task<bool> DoLogin() {
             System.Diagnostics.Debug.WriteLine(String.Format("Login in with user: {0}, pass: {1}", EmailAddress, Password));
             var email = EmailAddress.Trim();
             var password = Password.Trim();
@@ -37,11 +40,16 @@ namespace IntenseCare.ViewModels
                 var worked = await ApiCoordinator.Login(email, password);
                 if (worked != null) {
                     System.Diagnostics.Debug.WriteLine("SUCCESS!!!");
-                    await Locator.Current.GetService<ISettingsRepository>().SaveOrUpdateUserLogin(worked);
+                    await UserSettings.SaveOrUpdateUserLogin(worked);
+                    sharedPreferences.SetString(PreferencesKeys.EMAIL, EmailAddress);
+                    sharedPreferences.SetString(PreferencesKeys.PASSWORD, Password);
+                    return true;
                 } else {
                     System.Diagnostics.Debug.WriteLine("DID NOT WORKED!!!");
+                    return false;
                 }
             }
+            return false;
         }
     }
 }

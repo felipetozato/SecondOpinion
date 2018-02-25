@@ -117,9 +117,6 @@
       <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Text.Encodings.Web">
       <HintPath>..\packages\System.Text.Encodings.Web.4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -142,10 +139,13 @@
       <HintPath>..\packages\Realm.DataBinding.1.2.0\lib\Xamarin.iOS10\Realm.DataBinding.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq">
-      <HintPath>..\packages\Remotion.Linq.2.1.1\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
+      <HintPath>..\packages\Remotion.Linq.2.1.2\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Realm">
-      <HintPath>..\packages\Realm.Database.1.6.0\lib\netstandard1.4\Realm.dll</HintPath>
+      <HintPath>..\packages\Realm.Database.2.1.0\lib\netstandard1.4\Realm.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +172,21 @@
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BaseViewController.cs" />
-    <Compile Include="Views\ChatList\ChatListViewController.cs" />
-    <Compile Include="Views\ChatList\ChatListViewController.designer.cs">
-      <DependentUpon>ChatListViewController.cs</DependentUpon>
+    <Compile Include="Views\ChatList\DialogListViewController.cs" />
+    <Compile Include="Views\ChatList\DialogListViewController.designer.cs">
+      <DependentUpon>DialogListViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\IOSRouter.cs" />
+    <Compile Include="Views\UserList\UserListViewController.cs" />
+    <Compile Include="Views\UserList\UserListViewController.designer.cs">
+      <DependentUpon>UserListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Chat\DialogViewController.cs" />
+    <Compile Include="Views\Chat\DialogViewController.designer.cs">
+      <DependentUpon>DialogViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseTableViewController.cs" />
+    <Compile Include="Views\StoryboardNames.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -187,15 +198,44 @@
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\Login\Login.storyboard" />
     <InterfaceDefinition Include="Views\BaseViewController.xib" />
+    <InterfaceDefinition Include="Views\UserList\UserList.storyboard" />
+    <InterfaceDefinition Include="Views\Chat\Chat.storyboard" />
+    <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\ChatList\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\UserList\" />
+    <Folder Include="Views\Chat\" />
   </ItemGroup>
   <Import Project="..\SecondOpinion\SecondOpinion.projitems" Label="Shared" Condition="Exists('..\SecondOpinion\SecondOpinion.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Refit.4.0.1\build\netstandard1.4\refit.targets" Condition="Exists('..\packages\Refit.4.0.1\build\netstandard1.4\refit.targets')" />
-  <Import Project="..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets')" />
-  <Import Project="..\packages\Realm.Database.1.6.0\build\Realm.Database.targets" Condition="Exists('..\packages\Realm.Database.1.6.0\build\Realm.Database.targets')" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy FileWidth="120" TabWidth="4" IndentWidth="4" RemoveTrailingWhitespace="True" NoTabsAfterNonTabs="False" EolMarker="Native" TabsToSpaces="True" scope="text/plain" />
+          <DotNetNamingPolicy ResourceNamePolicy="FileFormatDefault" DirectoryNamespaceAssociation="PrefixedHierarchical" />
+          <CSSFormattingPolicy AutomaticFormatting="True" BracePositions="SemiExpanded" FormatOnPaste="True" HierarchicalIndentation="True" scope="text/x-css" />
+          <TextStylePolicy FileWidth="120" TabWidth="4" IndentWidth="4" RemoveTrailingWhitespace="True" EolMarker="Native" TabsToSpaces="True" NoTabsAfterNonTabs="True" scope="text/x-css" />
+          <HTMLFormattingPolicy FormatOnPaste="True" XHTMLCodingStyle="True" scope="text/x-html" />
+          <TextStylePolicy FileWidth="120" TabWidth="4" IndentWidth="4" RemoveTrailingWhitespace="True" EolMarker="Native" TabsToSpaces="True" NoTabsAfterNonTabs="True" scope="text/x-html" />
+          <JSONFormattingPolicy AutomaticFormatting="False" AutoStructureCompletion="True" BracePositions="SemiExpanded" FormatOnPaste="True" scope="text/x-json" />
+          <TextStylePolicy FileWidth="120" RemoveTrailingWhitespace="True" EolMarker="Native" TabWidth="2" TabsToSpaces="True" IndentWidth="2" NoTabsAfterNonTabs="True" scope="text/x-json" />
+          <TextStylePolicy FileWidth="120" TabWidth="4" IndentWidth="4" RemoveTrailingWhitespace="True" EolMarker="Native" TabsToSpaces="True" NoTabsAfterNonTabs="True" scope="text/x-fsharp" />
+          <FSharpFormattingPolicy scope="text/x-fsharp">
+            <DefaultFormat IndentOnTryWith="False" ReorderOpenDeclaration="False" SpaceAfterComma="True" SpaceAfterSemicolon="True" SpaceAroundDelimiter="True" SpaceBeforeArgument="True" SpaceBeforeColon="True" __added="0" />
+          </FSharpFormattingPolicy>
+          <CSharpFormattingPolicy IndentBlock="True" IndentBraces="False" IndentSwitchSection="True" IndentSwitchCaseSection="True" LabelPositioning="OneLess" NewLinesForBracesInTypes="False" NewLinesForBracesInMethods="False" NewLinesForBracesInProperties="False" NewLinesForBracesInAccessors="False" NewLinesForBracesInAnonymousMethods="False" NewLinesForBracesInControlBlocks="False" NewLinesForBracesInAnonymousTypes="False" NewLinesForBracesInObjectCollectionArrayInitializers="False" NewLinesForBracesInLambdaExpressionBody="False" NewLineForElse="False" NewLineForCatch="False" NewLineForFinally="False" NewLineForMembersInObjectInit="True" NewLineForMembersInAnonymousTypes="True" NewLineForClausesInQuery="True" SpacingAfterMethodDeclarationName="True" SpaceWithinMethodDeclarationParenthesis="False" SpaceBetweenEmptyMethodDeclarationParentheses="False" SpaceAfterMethodCallName="False" SpaceWithinMethodCallParentheses="False" SpaceBetweenEmptyMethodCallParentheses="False" SpaceAfterControlFlowStatementKeyword="True" SpaceWithinExpressionParentheses="False" SpaceWithinCastParentheses="False" SpaceWithinOtherParentheses="False" SpaceAfterCast="True" SpacesIgnoreAroundVariableDeclaration="False" SpaceBeforeOpenSquareBracket="False" SpaceBetweenEmptySquareBrackets="False" SpaceWithinSquareBrackets="False" SpaceAfterColonInBaseTypeDeclaration="True" SpaceAfterComma="True" SpaceAfterDot="False" SpaceAfterSemicolonsInForStatement="True" SpaceBeforeColonInBaseTypeDeclaration="True" SpaceBeforeComma="True" SpaceBeforeDot="False" SpaceBeforeSemicolonsInForStatement="False" SpacingAroundBinaryOperator="Single" WrappingPreserveSingleLine="True" WrappingKeepStatementsOnSingleLine="True" PlaceSystemDirectiveFirst="True" scope="text/x-csharp" />
+          <TextStylePolicy inheritsSet="null" scope="text/x-csharp" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\Realm.Database.2.1.0\build\Realm.Database.targets" Condition="Exists('..\packages\Realm.Database.2.1.0\build\Realm.Database.targets')" />
+  <Import Project="..\packages\Fody.2.4.2\build\Fody.targets" Condition="Exists('..\packages\Fody.2.4.2\build\Fody.targets')" />
 </Project>

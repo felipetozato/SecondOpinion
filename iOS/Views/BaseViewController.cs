@@ -6,8 +6,9 @@ using UIKit;
 
 namespace SecondOpinion.iOS.Views
 {
-    public class BaseViewController<T> : ReactiveViewController<T> where T : class
+    public abstract class BaseViewController<T> : ReactiveViewController<T> where T : class
     {
+
         private readonly CompositeDisposable subscriptionDisposables;
 
         public BaseViewController() : base() {
@@ -30,27 +31,9 @@ namespace SecondOpinion.iOS.Views
             ViewModel = (T)Activator.CreateInstance(typeof(T));
         }
 
-        public BaseViewController(string controllerName, Foundation.NSBundle bundle) : base(controllerName, bundle) {
+        public BaseViewController(string controllerName, Foundation.NSBundle bundle, params object[] viewModelParameters) : base(controllerName, bundle) {
             subscriptionDisposables = new CompositeDisposable();
-            ViewModel = (T)Activator.CreateInstance(typeof(T));
-        }
-
-        /// <summary>
-        /// Views the did load.
-        /// </summary>
-        public override void ViewDidLoad()
-        {
-            base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
-        }
-
-        /// <summary>
-        /// Dids the receive memory warning.
-        /// </summary>
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            ViewModel = (T)Activator.CreateInstance(typeof(T), viewModelParameters);
         }
 
         /// <summary>

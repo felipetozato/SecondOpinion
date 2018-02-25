@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8gB-hz-ngV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="hkb-N0-QBr">
+            <objects>
+                <viewController id="8gB-hz-ngV" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="diR-Ir-d8q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hys-eZ-Vyn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IyJ-Bn-nA1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6s-7T-zoi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Name" id="eK7-Yo-NZS"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CF4-ky-IGK">
+                                <rect key="frame" x="0.0" y="44" width="375" height="585"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" textLabel="zoV-dB-Z7z" style="IBUITableViewCellStyleDefault" id="Ow5-4B-JgS">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ow5-4B-JgS" id="U9G-sG-Yvb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zoV-dB-Z7z">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8gB-hz-ngV" id="zoh-Cd-ac9"/>
+                                    <outlet property="delegate" destination="8gB-hz-ngV" id="J9A-xe-Y0s"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNa-PV-5M4">
+                                <rect key="frame" x="0.0" y="629" width="375" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-ZE-e3C">
+                                        <rect key="frame" x="349" y="4" width="22" height="30"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-0E-tDk">
+                                        <rect key="frame" x="4" y="4" width="341" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Rdm-0E-tDk" firstAttribute="leading" secondItem="eNa-PV-5M4" secondAttribute="leading" constant="4" id="6ZB-1m-SC0"/>
+                                    <constraint firstItem="Rdm-0E-tDk" firstAttribute="top" secondItem="eNa-PV-5M4" secondAttribute="top" constant="4" id="9lA-XK-FwN"/>
+                                    <constraint firstItem="9Yc-ZE-e3C" firstAttribute="centerY" secondItem="eNa-PV-5M4" secondAttribute="centerY" id="M6L-99-wf6"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Yc-ZE-e3C" secondAttribute="bottom" constant="4" id="Vhc-CB-KwT"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Yc-ZE-e3C" secondAttribute="trailing" constant="4" id="Wd9-Ks-lD7"/>
+                                    <constraint firstItem="Rdm-0E-tDk" firstAttribute="trailing" secondItem="9Yc-ZE-e3C" secondAttribute="leading" constant="-4" id="lbC-kh-g5J"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rdm-0E-tDk" secondAttribute="bottom" constant="4" id="urS-ls-uOp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CF4-ky-IGK" firstAttribute="leading" secondItem="IyJ-Bn-nA1" secondAttribute="leading" id="1N1-vx-3Zp"/>
+                            <constraint firstItem="X6s-7T-zoi" firstAttribute="leading" secondItem="IyJ-Bn-nA1" secondAttribute="leading" id="2Qw-Vo-hyX"/>
+                            <constraint firstItem="eNa-PV-5M4" firstAttribute="leading" secondItem="IyJ-Bn-nA1" secondAttribute="leading" id="AaB-8u-kri"/>
+                            <constraint firstItem="CF4-ky-IGK" firstAttribute="top" secondItem="X6s-7T-zoi" secondAttribute="bottom" id="dFy-ea-ZyT"/>
+                            <constraint firstItem="X6s-7T-zoi" firstAttribute="top" secondItem="IyJ-Bn-nA1" secondAttribute="top" id="fm4-qM-SU0"/>
+                            <constraint firstItem="CF4-ky-IGK" firstAttribute="bottom" secondItem="eNa-PV-5M4" secondAttribute="top" id="gVu-Ly-RRS"/>
+                            <constraint firstAttribute="trailing" secondItem="X6s-7T-zoi" secondAttribute="trailing" id="ibd-cB-VfY"/>
+                            <constraint firstAttribute="trailing" secondItem="CF4-ky-IGK" secondAttribute="trailing" id="kKS-Hf-RCa"/>
+                            <constraint firstAttribute="trailing" secondItem="eNa-PV-5M4" secondAttribute="trailing" id="unc-WJ-uDE"/>
+                            <constraint firstItem="Hys-eZ-Vyn" firstAttribute="top" secondItem="eNa-PV-5M4" secondAttribute="bottom" id="zXK-Z9-cKk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="MessageEditText" destination="Rdm-0E-tDk" id="N3p-PD-rhV"/>
+                        <outlet property="MessageList" destination="CF4-ky-IGK" id="bqk-SU-DMi"/>
+                        <outlet property="SendMessageButton" destination="9Yc-ZE-e3C" id="txF-03-bFJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TaI-GZ-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.8000000000000007" y="-155.17241379310346"/>
+        </scene>
+    </scenes>
+</document>

@@ -36,6 +36,12 @@ namespace SecondOpinion.Models
             set;
         }
 
+        [JsonProperty("ts")]
+        public long TS {
+            get;
+            set;
+        }
+
         [PrimaryKey]
         [JsonProperty("user_id")]
         public long UserId {

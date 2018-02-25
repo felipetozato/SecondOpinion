@@ -12,14 +12,9 @@ namespace SecondOpinion
         /// <summary>
         /// Initialize cross platform components.
         /// </summary>
-        public static void Initialize()
-        {
-            var realm = Realm.GetInstance();
-
-            Locator.CurrentMutable.RegisterLazySingleton(() =>
-            {
-                return new SettingsRepository(realm);
-            }, typeof(ISettingsRepository));
+        public static void Initialize() {
+            Locator.CurrentMutable.RegisterConstant(new SettingsRepository(), typeof(ISettingsRepository));
+            Locator.CurrentMutable.RegisterConstant(new SharedPreferencesRepository(), typeof(ISharedPreferences));
         }
     }
 }
