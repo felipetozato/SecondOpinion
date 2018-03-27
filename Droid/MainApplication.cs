@@ -21,7 +21,7 @@ namespace SecondOpinion.Droid
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
-            App.Initialize();
+            AppInitializerViewModel.Initialize();
         }
 
         public override void OnTerminate()

@@ -9,7 +9,7 @@
     <Import_RootNamespace>SecondOpinion</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppInitializerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LoginRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserLogin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Api\ApiCoordnator.cs" />
@@ -34,6 +34,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\ISharedPreferences.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\SharedPreferencesReposiory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PreferencesKeys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CreateGroupViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CreateGroupRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />

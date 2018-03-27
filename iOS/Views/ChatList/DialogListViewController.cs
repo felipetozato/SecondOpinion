@@ -6,10 +6,12 @@ using System.Reactive.Linq;
 using Foundation;
 using SecondOpinion.Models;
 using CoreAnimation;
+using SecondOpinion.iOS.Views;
+using SecondOpinion.iOS.Chat;
 
-namespace SecondOpinion.iOS.Views
+namespace SecondOpinion.iOS.ChatList
 {
-    public partial class DialogListViewController : BaseTableViewController<DialogListViewModel>
+    public partial class DialogListViewController : Views.BaseTableViewController<DialogListViewModel>
     {
 
         UIBarButtonItem newMessageButton;

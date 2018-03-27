@@ -8,7 +8,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace SecondOpinion.iOS.Views
+namespace SecondOpinion.iOS.Chat
 {
     [Register ("ChatViewController")]
     partial class DialogViewController

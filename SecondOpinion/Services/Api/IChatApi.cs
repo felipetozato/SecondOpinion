@@ -15,5 +15,8 @@ namespace SecondOpinion.Services.Api {
 
         [Get("/chat/{dialogId}/history")]
         Task<Page<Message>> GetPrivateMessages ([AliasAs("dialogId")] string dialogId);
+
+        [Post("/chat/group_dialog")]
+        Task<Dialog> CreateGroupDialog ([Body] CreateGroupRequest createGroup);
     }
 }

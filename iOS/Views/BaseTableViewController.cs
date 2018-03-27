@@ -3,7 +3,8 @@ using System.Reactive.Disposables;
 using ReactiveUI;
 namespace SecondOpinion.iOS.Views {
     public abstract class BaseTableViewController<T> : ReactiveTableViewController<T> where T : class {
-        private readonly CompositeDisposable subscriptionDisposables;
+        
+        protected CompositeDisposable subscriptionDisposables;
 
         public BaseTableViewController () : base() {
             subscriptionDisposables = new CompositeDisposable();

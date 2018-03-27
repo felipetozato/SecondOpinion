@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace SecondOpinion.iOS.Views
+namespace SecondOpinion.iOS.Login
 {
     [Register ("LoginViewController")]
     partial class LoginViewController

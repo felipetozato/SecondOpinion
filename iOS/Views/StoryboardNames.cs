@@ -6,5 +6,6 @@ namespace SecondOpinion.iOS.Views {
         public const string CHAT_LIST = "ChatList";
         public const string LOGIN = "Login";
         public const string USER_LIST = "UserList";
+        public const string ADD_PARTICIPANT = "AddParticipants";
     }
 }

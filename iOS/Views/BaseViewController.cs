@@ -9,31 +9,31 @@ namespace SecondOpinion.iOS.Views
     public abstract class BaseViewController<T> : ReactiveViewController<T> where T : class
     {
 
-        private readonly CompositeDisposable subscriptionDisposables;
+        private CompositeDisposable subscriptionDisposables;
 
         public BaseViewController() : base() {
-            subscriptionDisposables = new CompositeDisposable();
             ViewModel = (T)Activator.CreateInstance(typeof(T));
+            CommonInit();
         }
 
         public BaseViewController(Foundation.NSObjectFlag flag) : base(flag) {
-            subscriptionDisposables = new CompositeDisposable();
             ViewModel = (T)Activator.CreateInstance(typeof(T));
+            CommonInit();
         }
 
         public BaseViewController(Foundation.NSCoder c) : base(c) {
-            subscriptionDisposables = new CompositeDisposable();
             ViewModel = (T)Activator.CreateInstance(typeof(T));
+            CommonInit();
         }
 
         public BaseViewController(IntPtr ptr) : base(ptr) {
-            subscriptionDisposables = new CompositeDisposable();
             ViewModel = (T)Activator.CreateInstance(typeof(T));
+            CommonInit();
         }
 
         public BaseViewController(string controllerName, Foundation.NSBundle bundle, params object[] viewModelParameters) : base(controllerName, bundle) {
-            subscriptionDisposables = new CompositeDisposable();
             ViewModel = (T)Activator.CreateInstance(typeof(T), viewModelParameters);
+            CommonInit();
         }
 
         /// <summary>
@@ -62,6 +62,10 @@ namespace SecondOpinion.iOS.Views
         /// <param name="disposableArray">Disposable array.</param>
         public void ShouldDispose(params IDisposable[] disposableArray) {
             Array.ForEach(disposableArray, subscriptionDisposables.Add);
+        }
+
+        protected void CommonInit() {
+            subscriptionDisposables = new CompositeDisposable();
         }
     }
 }

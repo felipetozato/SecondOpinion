@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using SecondOpinion.Models;
 using Refit;
@@ -11,7 +12,7 @@ namespace SecondOpinion.Services.Api
 {
     public static class ApiCoordinator
     {
-        const string SERVER_URL = "http://192.168.0.106:8080";
+        const string SERVER_URL = "http://192.168.0.102:8080";
 
         readonly static ILoginApi loginApi;
         readonly static IChatApi chatApi;
@@ -62,9 +63,14 @@ namespace SecondOpinion.Services.Api
             return chatApi.SendPrivateMessage(message);
         }
 
-        public static async Task<Page<Message>> GetPrivateMessages(string dialogId) {
-            var result = await chatApi.GetPrivateMessages(dialogId);
-            return result;
+        public static Task<Page<Message>> GetPrivateMessages(string dialogId) {
+            return chatApi.GetPrivateMessages(dialogId);
+        }
+
+        public static Task<Dialog> CreateMessageGroup(string groupName, IList<UserContact> users) {
+            var usersIds = users.Select(user => user.Id).ToList();
+            var bodyRequest = new CreateGroupRequest(groupName, usersIds);
+            return chatApi.CreateGroupDialog(bodyRequest);
         }
 
         private static string GetToken() {

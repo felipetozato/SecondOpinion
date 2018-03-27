@@ -1,11 +1,6 @@
 ﻿using Foundation;
-using SecondOpinion.Models;
-using Splat;
 using UIKit;
-using SecondOpinion.Repositories;
-using SecondOpinion.Services;
-using System.Reactive.Linq;
-using System;
+using System.Threading.Tasks;
 
 namespace SecondOpinion.iOS
 {
@@ -22,30 +17,29 @@ namespace SecondOpinion.iOS
             set;
         }
 
-        /// <summary>
-        /// The current user.
-        /// </summary>
-        public UserLogin currentUser;
 
-        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
-        {
-            App.Initialize();
+        private AppInitializerViewModel viewModel;
 
-            var settingsRepo = Locator.Current.GetService<ISettingsRepository>();
-            currentUser = settingsRepo.GetUserLogin();
-
-            UIViewController initialVC;
-            if (IsUserLoggedIn()) {
-                var storyboard = UIStoryboard.FromName("Main", null);
-                initialVC = storyboard.InstantiateInitialViewController();
-            }
-            else {
-				var storyboard = UIStoryboard.FromName("Login", null);
-				initialVC = storyboard.InstantiateInitialViewController();
-            }
-            this.Window.RootViewController = initialVC;
-            this.Window.MakeKeyAndVisible();
+		public override bool WillFinishLaunching (UIApplication application , NSDictionary launchOptions) {
+            viewModel = new AppInitializerViewModel();
             return true;
+		}
+
+		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
+            AppInitializerViewModel.Initialize();
+
+            var viewController = UIStoryboard.FromName("Storyboard", null).InstantiateInitialViewController();
+            this.Window.RootViewController = viewController;
+            this.Window.MakeKeyAndVisible();
+
+            return true;
+        }
+
+        private void SetAsMainScreen(UIViewController viewController) {
+            this.Window.RootViewController = viewController;
+            this.Window.MakeKeyAndVisible();
+            this.Window.SetNeedsLayout();
+            this.Window.LayoutIfNeeded();
         }
 
         public override void OnResignActivation(UIApplication application)
@@ -77,18 +71,6 @@ namespace SecondOpinion.iOS
         public override void WillTerminate(UIApplication application)
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
-        }
-
-        /// <summary>
-        /// Check if the user is logged in.
-        /// </summary>
-        /// <returns><c>true</c>, if is logged in was usered, <c>false</c> otherwise.</returns>
-        public bool IsUserLoggedIn() {
-            if (currentUser == null) {
-                return false;
-            } else {
-                return true;
-            }
         }
     }
 }

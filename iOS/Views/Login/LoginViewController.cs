@@ -3,10 +3,9 @@ using SecondOpinion.ViewModels;
 using ReactiveUI;
 using UIKit;
 
-namespace SecondOpinion.iOS.Views
+namespace SecondOpinion.iOS.Login
 {
-    public partial class LoginViewController : BaseViewController<LoginViewModel>
-    {
+    public partial class LoginViewController : Views.BaseViewController<LoginViewModel> {
 
         public LoginViewController(IntPtr ptr) : base(ptr) {}
 

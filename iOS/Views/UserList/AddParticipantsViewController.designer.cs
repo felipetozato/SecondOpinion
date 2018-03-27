@@ -8,13 +8,17 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace SecondOpinion.iOS.ChatList
+namespace SecondOpinion.iOS.UserList
 {
-    [Register ("ChatListViewController")]
-    partial class DialogListViewController
+    [Register ("AddParticipantsViewController")]
+    partial class AddParticipantsViewController
     {
         [Outlet]
         UIKit.UITableView ListView { get; set; }
+
+
+        [Action ("GoToGroupDetail:")]
+        partial void GoToGroupDetail (Foundation.NSObject sender);
 
         void ReleaseDesignerOutlets ()
         {

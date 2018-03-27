@@ -9,9 +9,9 @@ using SecondOpinion.ViewModels;
 
 using UIKit;
 
-namespace SecondOpinion.iOS.Views
+namespace SecondOpinion.iOS.Chat
 {
-    public partial class DialogViewController : BaseViewController<DialogViewModel>, IUITableViewDataSource, IUITableViewDelegate, IUITextFieldDelegate {
+    public partial class DialogViewController : Views.BaseViewController<DialogViewModel>, IUITableViewDataSource, IUITableViewDelegate, IUITextFieldDelegate {
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:SecondOpinion.iOS.Chat.ChatViewController"/> class.

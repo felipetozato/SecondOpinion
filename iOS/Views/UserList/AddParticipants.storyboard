@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d12-6A-rcW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Adicionar Participante-->
+        <scene sceneID="eCj-TJ-URk">
+            <objects>
+                <tableViewController storyboardIdentifier="AddParticipants" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d12-6A-rcW" customClass="AddParticipantsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zEV-3D-21f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="d12-6A-rcW" id="yvk-Ic-fkS"/>
+                            <outlet property="delegate" destination="d12-6A-rcW" id="fVZ-Id-XHr"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Adicionar Participante" largeTitleDisplayMode="never" id="V96-yf-XRb">
+                        <barButtonItem key="rightBarButtonItem" title="Proximo" id="PJk-cb-6JE">
+                            <connections>
+                                <action selector="GoToGroupDetail:" destination="d12-6A-rcW" id="8QM-7g-zJy"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="rightBarButtonItem" destination="PJk-cb-6JE" id="9Qc-vG-RW4"/>
+                        </connections>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ListView" destination="zEV-3D-21f" id="GVj-4i-xDB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JuY-P0-n5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="-4.0479760000000002"/>
+        </scene>
+        <!--Novo Grupo-->
+        <scene sceneID="WpQ-tQ-tv0">
+            <objects>
+                <viewController storyboardIdentifier="NewGroup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Ip-Oh-MeF" customClass="GroupDetailViewController" customModule="SecondOpinion_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Lk-Y6-OdR"/>
+                        <viewControllerLayoutGuide type="bottom" id="0sJ-ca-ByR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dWy-ND-Z3w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ofb-4M-QAc">
+                                <rect key="frame" x="32" y="80" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="6Y3-nf-Eu1"/>
+                                    <constraint firstAttribute="height" constant="48" id="pBN-8E-Siv"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoC-sK-1fF">
+                                <rect key="frame" x="96" y="127" width="271" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="WCi-HZ-skP"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help message" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIM-b1-6oD">
+                                <rect key="frame" x="96" y="136" width="271" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gx1-eD-yoK">
+                                <rect key="frame" x="96" y="89" width="271" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ofb-4M-QAc" firstAttribute="leading" secondItem="dWy-ND-Z3w" secondAttribute="leadingMargin" constant="16" id="HR4-v8-RNA"/>
+                            <constraint firstItem="VoC-sK-1fF" firstAttribute="trailing" secondItem="Gx1-eD-yoK" secondAttribute="trailing" id="PZ4-er-qk1"/>
+                            <constraint firstItem="TIM-b1-6oD" firstAttribute="top" secondItem="VoC-sK-1fF" secondAttribute="bottom" constant="8" id="Sog-wt-e0o"/>
+                            <constraint firstItem="Gx1-eD-yoK" firstAttribute="centerY" secondItem="ofb-4M-QAc" secondAttribute="centerY" id="TBi-HM-zKX"/>
+                            <constraint firstItem="Gx1-eD-yoK" firstAttribute="leading" secondItem="ofb-4M-QAc" secondAttribute="trailing" constant="16" id="WSf-aT-lbE"/>
+                            <constraint firstItem="TIM-b1-6oD" firstAttribute="leading" secondItem="VoC-sK-1fF" secondAttribute="leading" id="Xia-L4-H3U"/>
+                            <constraint firstItem="VoC-sK-1fF" firstAttribute="top" secondItem="Gx1-eD-yoK" secondAttribute="bottom" constant="8" id="ZO5-Qk-Ogi"/>
+                            <constraint firstItem="TIM-b1-6oD" firstAttribute="trailing" secondItem="VoC-sK-1fF" secondAttribute="trailing" id="d9B-4k-d5u"/>
+                            <constraint firstItem="VoC-sK-1fF" firstAttribute="leading" secondItem="Gx1-eD-yoK" secondAttribute="leading" id="one-2c-ueA"/>
+                            <constraint firstItem="Gx1-eD-yoK" firstAttribute="trailing" secondItem="dWy-ND-Z3w" secondAttribute="trailingMargin" constant="8" id="rpy-Nr-4h8"/>
+                            <constraint firstItem="ofb-4M-QAc" firstAttribute="top" secondItem="3Lk-Y6-OdR" secondAttribute="bottom" constant="16" id="wqD-OC-3gv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Novo Grupo" id="Fcv-5b-VTy">
+                        <barButtonItem key="rightBarButtonItem" title="Criar" id="0HB-E8-MSQ"/>
+                        <connections>
+                            <outlet property="rightBarButtonItem" destination="0HB-E8-MSQ" id="Oha-PR-ySj"/>
+                        </connections>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="CreateGroupButton" destination="0HB-E8-MSQ" id="LvR-t0-8Bq"/>
+                        <outlet property="GroupImage" destination="ofb-4M-QAc" id="IJN-zL-2Hs"/>
+                        <outlet property="GroupSubject" destination="Gx1-eD-yoK" id="Ifd-w2-LeS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oab-KE-mBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-4.0479760119940034"/>
+        </scene>
+    </scenes>
+</document>
