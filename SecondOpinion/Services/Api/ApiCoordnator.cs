@@ -45,6 +45,7 @@ namespace SecondOpinion.Services.Api
         /// <param name="password">Password.</param>
         public static async Task<UserLogin> Login(string email, string password) {
             var loginResquest = new LoginRequest(email, password);
+
             var userLogin = await loginApi.Login(loginResquest);
             userLogin.Email = email;
             userLogin.Password = password;

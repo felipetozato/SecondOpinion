@@ -11,5 +11,7 @@ namespace SecondOpinion.Repositories
         Task InvalidateUserLogin(UserLogin userLogin);
 
         UserLogin GetUserLogin();
+
+        Task DeleteToken();
     }
 }

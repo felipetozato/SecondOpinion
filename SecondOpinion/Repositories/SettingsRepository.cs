@@ -47,5 +47,17 @@ namespace SecondOpinion.Repositories
                 realmTemp.Add(userLogin , true);
             });
         }
+
+        /// <summary>
+        /// Deletes the token.
+        /// </summary>
+        /// <returns>The token.</returns>
+        public Task DeleteToken() {
+            var realm = Realm.GetInstance();
+            return realm.WriteAsync(db => {
+                var user = db.All<UserLogin>().First();
+                user.Token = string.Empty;
+            });
+        }
     }
 }
