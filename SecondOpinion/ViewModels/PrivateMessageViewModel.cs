@@ -63,6 +63,7 @@ namespace SecondOpinion.ViewModels
 
         private void GetMessages(string dialogId) {
             Observable.FromAsync(() => ApiCoordinator.GetPrivateMessages(dialogId))
+                      .Where(page => page.Items.Count > 0)
                       .Subscribe(page => {
                 MessageList.AddRange(page.Items);
             });
@@ -72,9 +73,30 @@ namespace SecondOpinion.ViewModels
             if (string.IsNullOrEmpty(_MessageText)) {
                 return Observable.Return(false);
             }
-            var messageBody = new Message(Chat.OccupantsIds.Find(userId => Chat.UserId != userId) , _MessageText);
+            var messageBody = Chat.Id != null ?
+                CreateChatDialogMessage(Chat.Id, _MessageText) :
+                Create1o1Message(Chat.OccupantsIds.Find(id => this.Chat.UserId != id) , _MessageText);
+            
+            return SendMessage(messageBody);
+        }
+
+        private Message Create1o1Message(long recipientId , string message) {
+            return new Message() {
+                ToUserId = recipientId ,
+                MessageBody = message
+            };
+        }
+
+        private Message CreateChatDialogMessage(String chatDialogId, string message) {
+            return new Message() {
+                ChatDialogId = chatDialogId ,
+                MessageBody = message
+            };
+        }
+
+        private IObservable<bool> SendMessage(Message message) {
             return Observable.FromAsync(async () => {
-                var result = await ApiCoordinator.SendPrivateMessage(messageBody);
+                var result = await ApiCoordinator.SendPrivateMessage(message);
                 result.Dialog = Chat;
                 MessageList.Add(result);
                 return true;

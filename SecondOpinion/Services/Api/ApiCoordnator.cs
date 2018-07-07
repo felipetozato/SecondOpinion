@@ -12,7 +12,7 @@ namespace SecondOpinion.Services.Api
 {
     public static class ApiCoordinator
     {
-        const string SERVER_URL = "http://192.168.0.102:8080";
+        const string SERVER_URL = "http://192.168.0.10:8080";
 
         readonly static ILoginApi loginApi;
         readonly static IChatApi chatApi;

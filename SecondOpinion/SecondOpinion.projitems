@@ -36,6 +36,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)PreferencesKeys.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CreateGroupViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CreateGroupRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\IUserContactRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\UserContactRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />

@@ -8,6 +8,8 @@ namespace SecondOpinion.Repositories
     {
         Task SaveOrUpdateUserLogin(UserLogin userLogin);
 
+        Task InvalidateUserLogin(UserLogin userLogin);
+
         UserLogin GetUserLogin();
     }
 }

@@ -36,7 +36,10 @@ namespace SecondOpinion
             if (currentUser != null) {
                 // Have to revalidate the login
                 if (currentUser.TS < DateTime.Now.Ticks) {
-                    var login = await ApiCoordinator.Login(currentUser.Email, currentUser.Password);
+                    string email = currentUser.Email;
+                    string password = currentUser.Password;
+                    await settingsRepo.InvalidateUserLogin(currentUser);
+                    var login = await ApiCoordinator.Login(email, password);
                     await settingsRepo.SaveOrUpdateUserLogin(login);
                 }
                 return false;

@@ -59,13 +59,14 @@ namespace SecondOpinion.Models
             set;
         }
 
-        public Message() {
-            
+        [JsonProperty("chat_dialog_id")]
+        public String ChatDialogId {
+            get;
+            set;
         }
 
-        public Message (long toUserId, string message) {
-            ToUserId = toUserId;
-            MessageBody = message;
+        public Message() {
+            
         }
     }
 }

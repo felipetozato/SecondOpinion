@@ -38,7 +38,6 @@ namespace SecondOpinion.ViewModels
                 var result = await Task.Run( () => {
                     var userLogin = UserSettings.GetUserLogin();
                     return ApiCoordinator.GetAllContacts();
-
                 });
                 ContactList.AddRange(result.Items.Select(UserListItem.Create));
                 System.Diagnostics.Debug.WriteLine("WORKED");

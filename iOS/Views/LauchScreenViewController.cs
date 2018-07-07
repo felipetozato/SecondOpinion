@@ -12,9 +12,12 @@ namespace SecondOpinion.iOS.Views
 		public LauchScreenViewController (IntPtr handle) : base (handle) {
 		}
 
-		public override async void ViewDidLoad () {
+		public override void ViewDidLoad () {
             base.ViewDidLoad();
+		}
 
+		public override async void ViewDidAppear (bool animated) {
+			base.ViewDidAppear(animated);
             var task = await ViewModel.ShouldGoToLogin();
             if (task) {
                 var storyboard = UIStoryboard.FromName("Login", null);
@@ -27,8 +30,8 @@ namespace SecondOpinion.iOS.Views
             }
 		}
 
-        private void SetAsMainScreen(UIViewController viewController) {
-            this.PresentViewController(viewController, true, null);
+		private void SetAsMainScreen(UIViewController viewController) {
+            this.PresentViewController(viewController , true , null);
         }
 	}
 }

@@ -51,7 +51,6 @@ namespace SecondOpinion.iOS.Chat
                 ViewModel.MessageList.Changed.ObserveOn(RxApp.MainThreadScheduler)
                 .Do(AddMessageToTableView)
                 .Subscribe(CleanOldMessage)
-                    
             );
         }
 

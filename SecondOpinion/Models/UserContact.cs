@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Realms;
 
 namespace SecondOpinion.Models
 {
-    public class UserContact
+	public class UserContact : RealmObject
     {
+		[PrimaryKey]
         [JsonProperty("id")]
         public long Id {
             get;
             set;
         }
-
+        
         [JsonProperty("full_name")]
         public string Name {
             get;

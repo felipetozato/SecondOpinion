@@ -30,6 +30,13 @@ namespace SecondOpinion.Repositories
             return (users.Count() > 0) ? users.First() : null;
         }
 
+        public Task InvalidateUserLogin (UserLogin userLogin) {
+            var realm = userLogin.Realm;
+            return realm.WriteAsync((Realm obj) => {
+                obj.Remove(userLogin);
+            });
+        }
+
         /// <summary>
         /// Saves the user login.
         /// </summary>
