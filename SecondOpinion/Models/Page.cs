@@ -6,6 +6,13 @@ namespace SecondOpinion.Models {
     
     public class Page<T> {
 
+        public static Page<T> Empty = new Page<T> {
+            TotalEntries = 0,
+            Skip = 0,
+            Limit = 0,
+            Items = new List<T>()
+        };
+
         [JsonProperty("total_entries")]
         public long TotalEntries {
             get;

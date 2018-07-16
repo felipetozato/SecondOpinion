@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Realms;
 
 namespace SecondOpinion.Models
 {
-    public class Message {
+    public class Message : RealmObject {
 
         [JsonProperty("_id")]
         public string Id {
@@ -13,9 +14,9 @@ namespace SecondOpinion.Models
         }
 
         [JsonProperty("attachments")]
-        public List<string> Attachements {
-            get;
-            set;
+        private IList<string> _attachements;
+        public IList<string> Attachements {
+            get => _attachements;
         }
 
         public Dialog Dialog {
@@ -30,9 +31,9 @@ namespace SecondOpinion.Models
         }
 
         [JsonProperty("delivered_ids")]
-        public List<long> DeliveredIds {
-            get;
-            set;
+        private IList<long> _deliveredIds;
+        public IList<long> DeliveredIds {
+            get => _deliveredIds;
         }
 
         [JsonProperty("recipient_id")]
@@ -48,9 +49,9 @@ namespace SecondOpinion.Models
         }
 
         [JsonProperty("read_ids")]
-        public List<long> ReadIds {
-            get;
-            set;
+        private IList<long> _readIds;
+        public IList<long> ReadIds {
+            get => _readIds;
         }
 
         [JsonProperty("read")]
@@ -59,10 +60,19 @@ namespace SecondOpinion.Models
             set;
         }
 
+        [Indexed]
         [JsonProperty("chat_dialog_id")]
         public String ChatDialogId {
             get;
             set;
+        }
+
+        public static Message Create(IList<string> attachaments, IList<long> deliveredIds, IList<long> readIds) {
+            return new Message() {
+                _attachements = attachaments,
+                _deliveredIds = deliveredIds,
+                _readIds = readIds
+            };
         }
 
         public Message() {

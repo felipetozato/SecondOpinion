@@ -28,20 +28,16 @@ namespace SecondOpinion.ViewModels
         /// Populate this instance.
         /// </summary>
         /// <returns>The populate.</returns>
-        public async Task Populate() {
-            await GetConversationFromServer();
+        public void Populate() {
+            GetConversationFromServer();
         }
 
-        private async Task GetConversationFromServer() {
-            try {
-                var result = await Task.Run(() => {
-                    return ApiCoordinator.GetAllChats();
-                });
-                ChatList.AddRange(result.Items);
+        private void GetConversationFromServer() {
+            Locator.CurrentMutable.GetService<IChatRepository>().GetAllDialogs()
+                   .Subscribe(result => {
+                ChatList.AddRange(result);
                 System.Diagnostics.Debug.WriteLine("WORKED");
-            } catch (Exception ex) {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-            }
+            });
         }
     }
 }

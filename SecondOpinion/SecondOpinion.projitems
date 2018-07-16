@@ -38,6 +38,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\CreateGroupRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\IUserContactRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\UserContactRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\IChatRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\ChatRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\IMessageRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\MessageRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />

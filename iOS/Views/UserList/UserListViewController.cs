@@ -17,7 +17,7 @@ namespace SecondOpinion.iOS.UserList
 
         public UserListViewController (IntPtr handle) : base (handle) {
             ViewModel = new UserListViewModel();
-            ViewModel.Populate().ConfigureAwait(false);
+            ViewModel.Populate();
         }
 
         public override void ViewDidLoad() {

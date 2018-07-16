@@ -20,7 +20,9 @@ namespace SecondOpinion
         /// Initialize cross platform components.
         /// </summary>
         public static void Initialize() {
-            Locator.CurrentMutable.RegisterConstant(new SettingsRepository(), typeof(ISettingsRepository));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new SettingsRepository(), typeof(ISettingsRepository));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new UserContactRepository(), typeof(IUserContactRepository));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new ChatRepository(), typeof(IChatRepository));
             Locator.CurrentMutable.RegisterConstant(new SharedPreferencesRepository(), typeof(ISharedPreferences));
 
             initialized = true;
@@ -35,7 +37,7 @@ namespace SecondOpinion
             var currentUser = settingsRepo.GetUserLogin();
             if (currentUser != null) {
                 // Have to revalidate the login
-                if (currentUser.TS < DateTime.Now.Ticks) {
+                if (currentUser.UpdatedAt.AddHours(2).Ticks < DateTime.Now.Ticks) {
                     string email = currentUser.Email;
                     string password = currentUser.Password;
                     await settingsRepo.InvalidateUserLogin(currentUser);

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Realms;
 
 namespace SecondOpinion.Models {
 
-    public class Dialog {
+    public class Dialog : RealmObject {
 
         [JsonProperty("_id")]
         public string Id {
@@ -13,7 +14,7 @@ namespace SecondOpinion.Models {
         }
 
         [JsonProperty("created_at")]
-        public DateTime CreatedAt {
+        public DateTimeOffset CreatedAt {
             get;
             set;
         }
@@ -37,7 +38,7 @@ namespace SecondOpinion.Models {
         }
 
         [JsonProperty("type")]
-        public ChatType Type {
+        public int Type {
             get;
             set;
         }
@@ -55,9 +56,10 @@ namespace SecondOpinion.Models {
         }
 
         [JsonProperty("occupants_ids")]
-        public List<long> OccupantsIds {
-            get;
-            set;
+        private IList<long> _occupantsIds;
+
+        public IList<long> OccupantsIds {
+            get => _occupantsIds;
         }
 
         private UserContact _userContact;

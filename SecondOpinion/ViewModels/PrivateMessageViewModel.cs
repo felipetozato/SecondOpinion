@@ -6,6 +6,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using SecondOpinion.Services.Api;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SecondOpinion.ViewModels
 {
@@ -75,7 +76,7 @@ namespace SecondOpinion.ViewModels
             }
             var messageBody = Chat.Id != null ?
                 CreateChatDialogMessage(Chat.Id, _MessageText) :
-                Create1o1Message(Chat.OccupantsIds.Find(id => this.Chat.UserId != id) , _MessageText);
+                                  Create1o1Message(Chat.OccupantsIds.First(id => this.Chat.UserId != id) , _MessageText);
             
             return SendMessage(messageBody);
         }

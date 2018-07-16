@@ -10,7 +10,7 @@ namespace SecondOpinion.Droid
         public static AboutFragment NewInstance() =>
             new AboutFragment { Arguments = new Bundle() };
 
-        public AboutViewModel ViewModel { get; set; }
+        //public AboutViewModel ViewModel { get; set; }
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -24,7 +24,7 @@ namespace SecondOpinion.Droid
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_about, container, false);
-            ViewModel = new AboutViewModel();
+            //ViewModel = new AboutViewModel();
             learnMoreButton = view.FindViewById<Button>(Resource.Id.button_learn_more);
             return view;
         }
@@ -48,7 +48,7 @@ namespace SecondOpinion.Droid
 
         void LearnMoreButton_Click(object sender, System.EventArgs e)
         {
-            ViewModel.OpenWebCommand.Execute(null);
+            //ViewModel.OpenWebCommand.Execute(null);
         }
     }
 }

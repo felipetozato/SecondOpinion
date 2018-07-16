@@ -39,14 +39,19 @@ namespace SecondOpinion.Models
         }
 
         [JsonProperty("user_tags")]
-        public List<string> Tags {
+        public IList<string> Tags {
             get;
-            set;
         }
 
-        public UserContact(long id, string name) {
-            Id = id;
-            Name = name;
+        public UserContact() {
+            
+        }
+
+        public static UserContact Create(long id, string name) {
+            return new UserContact {
+                Id = id,
+                Name = name
+            };
         }
     }
 }

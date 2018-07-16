@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using ReactiveUI;
 using SecondOpinion.Models;
 using SecondOpinion.Services.Api;
+using SecondOpinion.Repositories;
+using Splat;
 
 namespace SecondOpinion.ViewModels
 {
@@ -27,20 +29,19 @@ namespace SecondOpinion.ViewModels
             DeselectItem = ReactiveCommand.Create<int>(HandleDeselectItem , null , null);
         }
 
-        public async Task Populate() {
-            await GetUsersFromServer();
+        public void Populate() {
+            GetUsersFromServer();
         }
 
         public IList<UserContact> GetSelectedUsers() => ContactList.Where( item => item.Selected == true).Select(item => item.Item).ToList();
 
-        private async Task GetUsersFromServer() {
+        private void GetUsersFromServer() {
             try {
-                var result = await Task.Run( () => {
-                    var userLogin = UserSettings.GetUserLogin();
-                    return ApiCoordinator.GetAllContacts();
+                Locator.Current.GetService<IUserContactRepository>().GetAllUserContact()
+                       .Subscribe(users => {
+                    ContactList.AddRange(users.Select(UserListItem.Create));
+                    System.Diagnostics.Debug.WriteLine("WORKED");
                 });
-                ContactList.AddRange(result.Items.Select(UserListItem.Create));
-                System.Diagnostics.Debug.WriteLine("WORKED");
             } catch (Exception ex) {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
             }

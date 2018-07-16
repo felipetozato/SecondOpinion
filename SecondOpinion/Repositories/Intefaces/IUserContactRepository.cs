@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace SecondOpinion.Repositories {
     public interface IUserContactRepository {
 
-		IObservable<IReadOnlyList<UserContact>> GetAllUserContact();
+		IObservable<IEnumerable<UserContact>> GetAllUserContact();
         
     }
 }

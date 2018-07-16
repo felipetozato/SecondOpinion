@@ -26,7 +26,7 @@ namespace SecondOpinion.iOS.ChatList
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
-            ViewModel.Populate().ConfigureAwait(false);
+            ViewModel.Populate();
             SubscribeToViewModel();
             // Perform any additional setup after loading the view, typically from a nib.
             newMessageButton = new UIBarButtonItem(UIBarButtonSystemItem.Compose);
@@ -57,7 +57,7 @@ namespace SecondOpinion.iOS.ChatList
 
         public override void RowSelected (UITableView tableView , NSIndexPath indexPath) {
             var chat = ViewModel.ChatList[indexPath.Row];
-            chat.User = new UserContact(chat.UserId , chat.Name);
+            chat.User = UserContact.Create(chat.UserId , chat.Name);
             var storyboard = UIStoryboard.FromName(StoryboardNames.CHAT, null);
             var viewController = storyboard.InstantiateInitialViewController() as DialogViewController;
             viewController.SetChat(chat);
