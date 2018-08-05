@@ -1,12 +1,23 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
   <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.ED93D951-1948-436E-9D78-9EEFDA411ABD" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/ViewModels/PrivateMessageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
     <Files>
-      <File FileName="SecondOpinion/ViewModels/UserListViewModel.cs" Line="14" Column="2" />
-      <File FileName="SecondOpinion/Services/Api/ApiCoordnator.cs" Line="58" Column="9" />
-      <File FileName="SecondOpinion/ViewModels/CreateGroupViewModel.cs" Line="45" Column="75" />
-      <File FileName="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" Line="22" Column="9" />
+      <File FileName="SecondOpinion/ViewModels/UserListViewModel.cs" Line="6" Column="30" />
+      <File FileName="SecondOpinion/Services/Api/ApiCoordnator.cs" Line="58" Column="1" />
+      <File FileName="iOS/Main.cs" Line="11" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SecondOpinion" expanded="True">
+            <Node name="SecondOpinion" expanded="True" />
+            <Node name="SecondOpinion.iOS" expanded="True">
+              <Node name="Main.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
