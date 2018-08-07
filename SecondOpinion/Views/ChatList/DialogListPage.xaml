@@ -1,5 +1,21 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SecondOpinion.Views.ChatList.DialogListPage">
+<ui:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="SecondOpinion.Views.ChatList.DialogListPage"
+                    xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                    xmlns:viewModels="clr-namespace:SecondOpinion.ViewModels"
+                    xmlns:ui="clr-namespace:SecondOpinion.Views"
+                    x:TypeArguments="viewModels:DialogListViewModel">
     <ContentPage.Content>
+        <ListView x:Name="DialogList"
+                  SeparatorColor="Silver"
+                  SeparatorVisibility="Default">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Name}" TextColor="Black"
+                               Detail="{Binding LastMessage}" DetailColor="Silver"
+                               ImageSource="{Binding Photo}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
-</ContentPage>
+</ui:ContentPageBase>

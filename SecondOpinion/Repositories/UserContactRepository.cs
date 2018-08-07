@@ -37,7 +37,7 @@ namespace SecondOpinion.Repositories {
                 var realm = Realm.GetInstance();
                 realm.Write(() => {
                     foreach (var item in results.Items) {
-                        var result = realm.Add<UserContact>(item);
+                        var result = realm.Add<UserContact>(item, true);
                     }
                 });
                 System.Diagnostics.Debug.WriteLine("WORKED");

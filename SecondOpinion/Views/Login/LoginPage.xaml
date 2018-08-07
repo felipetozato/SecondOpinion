@@ -18,8 +18,24 @@
                    HorizontalTextAlignment="Center"
                    Margin="8,16,8,0"
                    Style="{DynamicResource SubtitleStyle}"/>
-            <Entry x:Name="Email" Placeholder="Email" Margin="16,48,16,0"/>
-            <Entry x:Name="Password" Placeholder="Password" Margin="16,16,16,0"/>
+            <Entry x:Name="Email" Placeholder="Email" Margin="16,48,16,0">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
+            <Entry x:Name="Password" Placeholder="Password" Margin="16,16,16,0">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
             <Button x:Name="LoginButton" Text="Login" Margin="16,16,16,0"/>
         </StackLayout>
     </ContentPage.Content>

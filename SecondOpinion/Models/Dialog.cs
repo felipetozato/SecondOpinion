@@ -7,6 +7,7 @@ namespace SecondOpinion.Models {
 
     public class Dialog : RealmObject {
 
+        [PrimaryKey]
         [JsonProperty("_id")]
         public string Id {
             get;

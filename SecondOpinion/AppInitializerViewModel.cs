@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 using ReactiveUI;
 using System.Threading;
 using System.Reactive.Linq;
+using SecondOpinion.ViewModels;
 
 namespace SecondOpinion
 {
-    public class AppInitializerViewModel
+    public class AppInitializerViewModel : BaseViewModel
     {
 
         private static bool initialized;

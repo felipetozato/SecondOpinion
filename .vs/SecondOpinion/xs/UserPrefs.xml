@@ -1,28 +1,20 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
-  <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.ED93D951-1948-436E-9D78-9EEFDA411ABD" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
+  <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.895073C9-8C09-4288-A0EF-6DF0E2D3B836" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/ViewModels/LoginViewModel.cs">
     <Files>
-      <File FileName="SecondOpinion/ViewModels/UserListViewModel.cs" Line="6" Column="30" />
-      <File FileName="SecondOpinion/Services/Api/ApiCoordnator.cs" Line="58" Column="1" />
+      <File FileName="SecondOpinion/ViewModels/DialogListViewModel.cs" Line="36" Column="73" />
+      <File FileName="SecondOpinion/Views/MainTabbedPage.xaml" Line="4" Column="27" />
+      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" Line="21" Column="74" />
       <File FileName="iOS/Main.cs" Line="11" Column="1" />
+      <File FileName="SecondOpinion/ViewModels/LoginViewModel.cs" Line="37" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="SecondOpinion" expanded="True">
-            <Node name="SecondOpinion" expanded="True" />
-            <Node name="SecondOpinion.iOS" expanded="True">
-              <Node name="Main.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/felipe/Code/SecondOpinion/iOS/Views/LoadViewController.cs" relfile="iOS/Views/LoadViewController.cs" line="19" column="1" />
+      <Breakpoint file="/Users/felipe/Code/SecondOpinion/iOS/Views/LauchScreenViewController.cs" relfile="iOS/Views/LauchScreenViewController.cs" line="33" column="77" />
+      <Breakpoint file="/Users/felipe/Code/SecondOpinion/iOS/Views/LauchScreenViewController.cs" relfile="iOS/Views/LauchScreenViewController.cs" line="28" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
