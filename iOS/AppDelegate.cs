@@ -1,6 +1,8 @@
 ﻿using Foundation;
 using UIKit;
 using System.Threading.Tasks;
+using SecondOpinion.iOS.Views;
+using Xamarin.Forms;
 
 namespace SecondOpinion.iOS
 {
@@ -26,9 +28,10 @@ namespace SecondOpinion.iOS
 		}
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
+            Forms.Init();
             AppInitializerViewModel.Initialize();
 
-            var viewController = UIStoryboard.FromName("Storyboard", null).InstantiateInitialViewController();
+            var viewController = new LaunchScreenViewControllerV2();
             this.Window.RootViewController = viewController;
             this.Window.MakeKeyAndVisible();
 

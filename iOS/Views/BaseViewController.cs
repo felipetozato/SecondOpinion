@@ -36,6 +36,11 @@ namespace SecondOpinion.iOS.Views
             CommonInit();
         }
 
+        public BaseViewController(string controllerName, Foundation.NSBundle bundle) : base(controllerName, bundle) {
+            ViewModel = (T)Activator.CreateInstance(typeof(T));
+            CommonInit();
+        }
+
         /// <summary>
         /// Views the did disappear.
         /// </summary>
