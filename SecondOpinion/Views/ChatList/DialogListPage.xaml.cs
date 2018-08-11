@@ -21,8 +21,9 @@ namespace SecondOpinion.Views.ChatList {
                 ViewModel.ChatList.Changed
                          .Where(list => list != null && list.NewItems.Count > 0)
                          .Subscribe(chatList => {
-                    DialogList.ItemsSource = ViewModel.ChatList;
+                    DialogList.ItemsSource = chatList.NewItems;
                 });
+
             });
         }
     }

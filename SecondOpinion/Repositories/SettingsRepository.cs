@@ -31,10 +31,10 @@ namespace SecondOpinion.Repositories
         }
 
         public Task InvalidateUserLogin (UserLogin userLogin) {
-            var realm = userLogin.Realm;
-            return realm.WriteAsync((Realm obj) => {
-                obj.Remove(userLogin);
-            });
+            userLogin.Realm.Write(() => {
+                userLogin.Realm.Remove(userLogin);
+            }); 
+            return Task.CompletedTask;
         }
 
         /// <summary>

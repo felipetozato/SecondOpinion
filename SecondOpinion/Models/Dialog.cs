@@ -58,7 +58,6 @@ namespace SecondOpinion.Models {
 
         [JsonProperty("occupants_ids")]
         private IList<long> _occupantsIds;
-
         public IList<long> OccupantsIds {
             get => _occupantsIds;
         }
@@ -69,6 +68,13 @@ namespace SecondOpinion.Models {
             set {
                 _userContact = value;
                 UserId = _userContact.Id;
+            }
+        }
+
+        public string PhotoToShow {
+            get {
+                if (Photo != null) return Photo;
+                return Type.Equals(ChatType.PrivateChat) ? "user-solid" : "group-solid";
             }
         }
 

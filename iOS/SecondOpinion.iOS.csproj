@@ -127,6 +127,10 @@
     <ImageAsset Include="Assets.xcassets\addGroup.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\addGroup.imageset\addGroup.pdf" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\user-solid.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\user-solid.imageset\user-solid.pdf" />
+    <ImageAsset Include="Assets.xcassets\group-solid.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\group-solid.imageset\group-solid.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -189,6 +193,8 @@
     <Folder Include="Resources\" />
     <Folder Include="Resources\en.lproj\" />
     <Folder Include="Resources\pt.lproj\" />
+    <Folder Include="Assets.xcassets\user-solid.imageset\" />
+    <Folder Include="Assets.xcassets\group-solid.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\en.lproj\Localizable.strings" />
