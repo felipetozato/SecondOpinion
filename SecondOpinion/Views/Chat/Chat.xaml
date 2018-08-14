@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="SecondOpinion.Views.Chat.Chat"
+                    xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                    xmlns:viewModels="clr-namespace:SecondOpinion.ViewModels"
+                    xmlns:ui="clr-namespace:SecondOpinion.Views"
+                    x:TypeArguments="viewModels:DialogViewModel"
+                    Title="{Binding Chat.Name}">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                         Margin="6">
+                <Entry x:Name="MessageEditText" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="SendMessageButton" Image="second" Text="Send"
+                        Margin="4, 0, 0, 0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ui:ContentPageBase>

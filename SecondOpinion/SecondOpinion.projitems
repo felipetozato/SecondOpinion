@@ -9,7 +9,6 @@
     <Import_RootNamespace>SecondOpinion</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)AppInitializerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LoginRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserLogin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Api\ApiCoordnator.cs" />
@@ -30,7 +29,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)SingleThreadTaskScheduler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DisposeHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Api\IUserApi.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LaunchViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\ISharedPreferences.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\SharedPreferencesReposiory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PreferencesKeys.cs" />
@@ -52,6 +50,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabbedPage.xaml.cs">
       <DependentUpon>MainTabbedPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Launch\LaunchScreen.xaml.cs">
+      <DependentUpon>LaunchScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AppInitializerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Chat\Chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Chat\ChatMessage.xaml.cs">
+      <DependentUpon>ChatMessage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />
@@ -61,6 +69,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Login\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\ChatList\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Launch\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Chat\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\LoginPage.xaml">
@@ -72,6 +82,18 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainTabbedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Launch\LaunchScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Chat\Chat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Chat\ChatMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

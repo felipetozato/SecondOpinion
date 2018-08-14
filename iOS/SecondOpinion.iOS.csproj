@@ -163,10 +163,6 @@
     <Compile Include="Views\UserList\GroupDetailViewController.designer.cs">
       <DependentUpon>GroupDetailViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\LaunchScreenViewControllerV2.cs" />
-    <Compile Include="Views\LaunchScreenViewControllerV2.designer.cs">
-      <DependentUpon>LaunchScreenViewControllerV2.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

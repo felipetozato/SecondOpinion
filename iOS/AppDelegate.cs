@@ -3,6 +3,8 @@ using UIKit;
 using System.Threading.Tasks;
 using SecondOpinion.iOS.Views;
 using Xamarin.Forms;
+using SecondOpinion.ViewModels;
+using SecondOpinion.Views.Launch;
 
 namespace SecondOpinion.iOS
 {
@@ -31,10 +33,8 @@ namespace SecondOpinion.iOS
             Forms.Init();
             AppInitializerViewModel.Initialize();
 
-            var viewController = new LaunchScreenViewControllerV2();
-            this.Window.RootViewController = viewController;
-            this.Window.MakeKeyAndVisible();
-
+            var viewController = new LaunchScreen().CreateViewController();
+            SetAsMainScreen(viewController);
             return true;
         }
 

@@ -10,7 +10,7 @@ using System.Threading;
 using System.Reactive.Linq;
 using SecondOpinion.ViewModels;
 
-namespace SecondOpinion
+namespace SecondOpinion.ViewModels
 {
     public class AppInitializerViewModel : BaseViewModel
     {

@@ -1,16 +1,10 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
   <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.895073C9-8C09-4288-A0EF-6DF0E2D3B836" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/ChatList/DialogListPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/Chat/ChatMessage.xaml.cs">
     <Files>
-      <File FileName="SecondOpinion/Views/MainTabbedPage.xaml" Line="10" Column="14" />
-      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" Line="43" Column="1" />
-      <File FileName="SecondOpinion/Repositories/SettingsRepository.cs" Line="61" Column="10" />
-      <File FileName="iOS/Main.cs" Line="11" Column="1" />
-      <File FileName="SecondOpinion/AppInitializerViewModel.cs" Line="44" Column="40" />
-      <File FileName="SecondOpinion/Repositories/Intefaces/ISettingsRepository.cs" Line="11" Column="14" />
-      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" Line="10" Column="69" />
-      <File FileName="SecondOpinion/ViewModels/DialogListViewModel.cs" Line="14" Column="32" />
-      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml" Line="26" Column="37" />
+      <File FileName="SecondOpinion/Services/Api/ApiCoordnator.cs" Line="15" Column="56" />
+      <File FileName="SecondOpinion/Views/Chat/ChatMessage.xaml" Line="8" Column="1" />
+      <File FileName="SecondOpinion/Views/Chat/ChatMessage.xaml.cs" Line="11" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
