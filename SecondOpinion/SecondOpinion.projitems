@@ -54,8 +54,8 @@
       <DependentUpon>LaunchScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AppInitializerViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Chat\Chat.xaml.cs">
-      <DependentUpon>Chat.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Chat\ChatPage.xaml.cs">
+      <DependentUpon>ChatPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Chat\ChatMessage.xaml.cs">
       <DependentUpon>ChatMessage.xaml</DependentUpon>
@@ -89,7 +89,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Chat\Chat.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Chat\ChatPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

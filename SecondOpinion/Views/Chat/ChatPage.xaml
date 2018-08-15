@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                    x:Class="SecondOpinion.Views.Chat.Chat"
+                    x:Class="SecondOpinion.Views.Chat.ChatPage"
                     xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                     xmlns:viewModels="clr-namespace:SecondOpinion.ViewModels"
                     xmlns:ui="clr-namespace:SecondOpinion.Views"
@@ -9,9 +9,18 @@
                     Title="{Binding Chat.Name}">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <ListView>
+            <ListView
+                  x:Name="MessageList"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="Silver"
+                  CachingStrategy="RecycleElement"
+                  HasUnevenRows="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding MessageBody}" LineBreakMode="WordWrap" Margin="0,8,0,8"/>
+                        </ViewCell>
+<!--                        <TextCell Text="{Binding MessageBody}"  />-->
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
