@@ -1,20 +1,1 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
-
-namespace SecondOpinion.Views.Chat {
-    public partial class ChatMessage : ViewCell {
-        
-        public static readonly BindableProperty ContentProperty =
-            BindableProperty.Create ("ContentLabel", typeof(string), typeof(ChatMessage), "");
-
-        public string Content {
-            get { return (string) GetValue (ContentProperty); }
-            set { SetValue (ContentProperty, value); }
-        }
-
-        public ChatMessage () {
-            InitializeComponent();
-        }
-    }
-}
+﻿using Xamarin.Forms;namespace SecondOpinion.Views.Chat {    public partial class ChatMessage : ViewCell {        public static readonly BindableProperty ContentProperty =            BindableProperty.Create("Content", typeof(string), typeof(ChatMessage), string.Empty);        public string Content {            get => (string) GetValue (ContentProperty);            set => SetValue (ContentProperty, value);        }        public static readonly BindableProperty MessageColorProperty =            BindableProperty.Create("MessageColor", typeof(Color), typeof(ChatMessage), Color.White);        public Color MessageColor {            get => (Color)GetValue(MessageColorProperty);            set => SetValue(MessageColorProperty, value);        }        public ChatMessage () {            InitializeComponent();        }        private void SetBinds() {            BackgroundFrame.BindingContext = this;            BackgroundFrame.SetBinding(Frame.BackgroundColorProperty, "MessageColor");            ContentLabel.BindingContext = this;            ContentLabel.SetBinding(Label.TextProperty, "Content");        }    }}

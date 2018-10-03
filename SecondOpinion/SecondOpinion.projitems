@@ -65,7 +65,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />
     <Folder Include="$(MSBuildThisFileDirectory)Repositories\" />
     <Folder Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Login\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\ChatList\" />

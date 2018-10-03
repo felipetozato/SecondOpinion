@@ -20,7 +20,7 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"
                                      Padding="4,4,8,4">
-                            <Frame CornerRadius="30" Margin="4" Padding="0" IsClippedToBounds="true"
+                            <Frame CornerRadius="32" Margin="4" Padding="0" IsClippedToBounds="true"
                                    HeightRequest="60" WidthRequest="60" VerticalOptions="Center"
                                    BackgroundColor="Silver">
                                 <Image x:Name="Image" Source="{Binding PhotoToShow}" Margin="4"/>    

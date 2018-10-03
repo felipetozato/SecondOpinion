@@ -5,22 +5,19 @@
                     xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                     xmlns:viewModels="clr-namespace:SecondOpinion.ViewModels"
                     xmlns:ui="clr-namespace:SecondOpinion.Views"
+                    xmlns:chat="clr-namespace:SecondOpinion.Views.Chat"
                     x:TypeArguments="viewModels:DialogViewModel"
                     Title="{Binding Chat.Name}">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <ListView
                   x:Name="MessageList"
-                  SeparatorVisibility="Default"
-                  SeparatorColor="Silver"
+                  SeparatorVisibility="None"
                   CachingStrategy="RecycleElement"
                   HasUnevenRows="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding MessageBody}" LineBreakMode="WordWrap" Margin="0,8,0,8"/>
-                        </ViewCell>
-<!--                        <TextCell Text="{Binding MessageBody}"  />-->
+                        <chat:ChatMessage Content="Hola!" MessageColor="Aqua" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
