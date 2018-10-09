@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
@@ -15,10 +15,19 @@ namespace SecondOpinion.iOS.Views.Chat
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel _MessageContent { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView RootContent { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (_MessageContent != null) {
+                _MessageContent.Dispose ();
+                _MessageContent = null;
+            }
+
             if (RootContent != null) {
                 RootContent.Dispose ();
                 RootContent = null;

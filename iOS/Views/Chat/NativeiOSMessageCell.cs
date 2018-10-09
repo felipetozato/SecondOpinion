@@ -14,6 +14,8 @@ namespace SecondOpinion.iOS.Views.Chat
         public static readonly NSString Key = new NSString("NativeiOSMessageCell");
         public static readonly UINib Nib;
 
+        public UILabel MessageContent => _MessageContent;
+
         public ChatMessage ChatCell {
             get;
             private set;

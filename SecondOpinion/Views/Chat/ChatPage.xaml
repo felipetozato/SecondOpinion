@@ -14,10 +14,15 @@
                   x:Name="MessageList"
                   SeparatorVisibility="None"
                   CachingStrategy="RecycleElement"
-                  HasUnevenRows="true">
+                  HasUnevenRows="true"
+                  SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <chat:ChatMessage Content="Hola!" MessageColor="Aqua" />
+                        <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" >
+                            <Frame x:Name="BackgroundFrame" CornerRadius="10" Margin="16,8,16,8" Padding="2" BackgroundColor="{Binding MessageColor}" HasShadow="false">
+                                <Label x:Name="ContentLabel" Margin="2" Text="{Binding MessageBody}"/>
+                            </Frame>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -7,6 +7,8 @@ using System.Reactive.Linq;
 using SecondOpinion.Services.Api;
 using System.Collections.Generic;
 using System.Linq;
+using Splat;
+using SecondOpinion.Repositories;
 
 namespace SecondOpinion.ViewModels
 {
@@ -25,6 +27,11 @@ namespace SecondOpinion.ViewModels
         /// </summary>
         /// <value>The message list.</value>
         public ReactiveList<Message> MessageList {
+            get;
+            private set;
+        }
+
+        public UserLogin CurrentUserLogin {
             get;
             private set;
         }
@@ -60,6 +67,7 @@ namespace SecondOpinion.ViewModels
         public void Populate() {
             // Load existing messages
             GetMessages(Chat.Id);
+            CurrentUserLogin = Locator.CurrentMutable.GetService<ISettingsRepository>().GetUserLogin();
         }
 
         private void GetMessages(string dialogId) {

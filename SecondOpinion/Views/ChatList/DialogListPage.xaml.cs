@@ -16,8 +16,7 @@ namespace SecondOpinion.Views.ChatList {
             Init();
             ViewModel.Populate();
             SubscribeToViewModel();
-
-            this.Title = "Conversas";
+            this.DialogList.BindingContext = ViewModel.ChatList;
         }
 
         void Init() {
