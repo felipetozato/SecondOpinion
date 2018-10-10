@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
   <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8183B143-D94E-4527-A8CE-93F06343B94D" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/ColorUtils.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/ChatList/DialogListPage.xaml.cs">
     <Files>
-      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml.cs" Line="54" Column="102" />
-      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml" Line="23" Column="83" />
+      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml.cs" Line="50" Column="50" />
+      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml" Line="38" Column="1" />
       <File FileName="iOS/AppDelegate.cs" Line="34" Column="42" />
-      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" Line="19" Column="65" />
-      <File FileName="SecondOpinion/ViewModels/DialogListViewModel.cs" Line="14" Column="31" />
-      <File FileName="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" Line="20" Column="18" />
-      <File FileName="SecondOpinion/Views/ColorUtils.cs" Line="10" Column="53" />
+      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="SecondOpinion/Views/ContentPageBase.cs" Line="9" Column="18" />
+      <File FileName="SecondOpinion/Models/UserContact.cs" Line="8" Column="15" />
+      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml" Line="38" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -18,6 +18,8 @@
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PrivateMessageViewModel.cs" relfile="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" line="85" column="1" />
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PrivateMessageViewModel.cs" relfile="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" line="93" column="1" />
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/Chat/Chat.xaml.cs" relfile="SecondOpinion/Views/Chat/Chat.xaml.cs" line="34" column="1" />
+      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" relfile="SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" line="28" column="1" />
+      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" relfile="SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" line="24" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
