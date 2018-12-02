@@ -1,10 +1,16 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="SecondOpinion.Views.MainTabbedPage"
-            xmlns:chatlist="clr-namespace:SecondOpinion.Views.ChatList">
+            xmlns:chatlist="clr-namespace:SecondOpinion.Views.ChatList"
+            xmlns:patients="clr-namespace:SecondOpinion.Views.Patients">
     <NavigationPage Title="Conversas" Icon="First.png">
         <x:Arguments>
             <chatlist:DialogListPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Pacientes" Icon="Second.png">
+        <x:Arguments>
+            <patients:PatientList />
         </x:Arguments>
     </NavigationPage>
 </TabbedPage>

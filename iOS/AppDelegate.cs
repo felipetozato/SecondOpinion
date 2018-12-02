@@ -5,6 +5,8 @@ using SecondOpinion.iOS.Views;
 using Xamarin.Forms;
 using SecondOpinion.ViewModels;
 using SecondOpinion.Views.Launch;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
+using System;
 
 namespace SecondOpinion.iOS
 {
@@ -31,8 +33,11 @@ namespace SecondOpinion.iOS
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
             Forms.Init();
+            KeyboardOverlapRenderer.Init();
             AppInitializerViewModel.Initialize();
-
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+            };
             var viewController = new LaunchScreen().CreateViewController();
             SetAsMainScreen(viewController);
             return true;

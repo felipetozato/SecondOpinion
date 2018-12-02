@@ -8,35 +8,42 @@ using System.Reactive.Linq;
 using SecondOpinion.Models;
 using SecondOpinion.Views.Chat;
 using System.Reactive.Disposables;
+using SecondOpinion.Views.NewChat;
 
 namespace SecondOpinion.Views.ChatList {
     public partial class DialogListPage : ContentPageBase<DialogListViewModel> {
         public DialogListPage () {
             InitializeComponent();
             Init();
-            ViewModel.Populate();
             SubscribeToViewModel();
+            ViewModel.Populate();
             this.DialogList.BindingContext = ViewModel.ChatList;
         }
 
         void Init() {
-            this.WhenActivated(disposables => {
-                DialogList.Events().ItemSelected
-                          .Select(x => x.SelectedItem as Dialog)
-                          .Subscribe(dialog => {
-                    var chatPage = new ChatPage(dialog);
-                    this.Navigation.PushAsync(chatPage);
-                }).DisposeWith(SubscriptionDisposables);
-            });
+            NewChatButton.Clicked += NewChatButton_Clicked;
+            DialogList.ItemsSource = ViewModel.ChatList;
+        }
+
+        void NewChatButton_Clicked (object sender , EventArgs e) {
+            var newMessageScreen = new UserList(this.Navigation);
+            Navigation.PushModalAsync(new NavigationPage(newMessageScreen) , true);
         }
 
         private void SubscribeToViewModel() {
             this.WhenActivated(disposables => {
+                DialogList.ItemSelected += (sender, e) => {
+                    var dialog = e.SelectedItem as Dialog;
+                    var chatPage = new ChatPage(dialog);
+                    this.Navigation.PushAsync(chatPage);
+                };
+
                 ViewModel.ChatList.Changed
                          .Where(list => list != null && list.NewItems.Count > 0)
                          .ObserveOn(RxApp.MainThreadScheduler)
                          .Subscribe(chatList => {
-                    DialogList.ItemsSource = chatList.NewItems;
+                    //DialogList.ItemsSource = null;
+                    //DialogList.ItemsSource = chatList.NewItems;
                 });
             });
         }

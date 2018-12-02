@@ -23,7 +23,7 @@ namespace SecondOpinion.iOS.UserList
         /// </summary>
         /// <param name="selectedUsers">Selected users.</param>
         public void SetSelectedUsers(IList<UserContact> selectedUsers) {
-            ViewModel.SelectedUsers = selectedUsers;
+            //ViewModel.SelectedUsers = selectedUsers;
         }
 
         void SubscribeToViewModel() {

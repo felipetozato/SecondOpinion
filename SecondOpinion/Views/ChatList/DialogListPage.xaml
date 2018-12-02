@@ -7,7 +7,7 @@
                     x:TypeArguments="viewModels:DialogListViewModel"
                     Title="Chat">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="NewChat" Order="Primary" Text="Novo"/>
+        <ToolbarItem x:Name="NewChatButton" Order="Primary" Text="Novo"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView x:Name="DialogList"

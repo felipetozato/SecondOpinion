@@ -64,8 +64,14 @@ namespace SecondOpinion.Services.Api
             return chatApi.SendPrivateMessage(message);
         }
 
-        public static Task<Page<Message>> GetPrivateMessages(string dialogId) {
-            return chatApi.GetPrivateMessages(dialogId);
+        public static async Task<Page<Message>> GetPrivateMessages(string dialogId) {
+            try {
+                var result = await chatApi.GetPrivateMessages(dialogId);
+                return result;
+            } catch (Exception e) {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
         public static Task<Dialog> CreateMessageGroup(string groupName, IList<UserContact> users) {

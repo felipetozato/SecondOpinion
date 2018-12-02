@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Realms;
+using System.Linq;
 
 namespace SecondOpinion.Models {
 
@@ -82,6 +83,31 @@ namespace SecondOpinion.Models {
             PublicGroup = 1,
             PrivateGroup = 2,
             PrivateChat = 3
+        }
+
+        public Dialog() {
+
+        }
+
+        public Dialog(long[] users, long currentUserId, ChatType type, string name) {
+            _occupantsIds = users;
+            UserId = currentUserId;
+            Type = (int) type;
+            Name = name;
+        }
+
+        public override bool Equals (object obj) {
+            if (obj is Dialog dialog) {
+                return this.Id.Equals(dialog.Id);
+            } else {
+                return false;
+            }
+
+        }
+
+        public override int GetHashCode () {
+            const int prime = 31;
+            return prime * this.Id.GetHashCode();
         }
     }
 }

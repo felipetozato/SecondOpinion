@@ -61,6 +61,19 @@
       <DependentUpon>ChatMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ColorUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewChat\UserList.xaml.cs">
+      <DependentUpon>UserList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewChat\AddParticipant.xaml.cs">
+      <DependentUpon>AddParticipant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewChat\GroupDetail.xaml.cs">
+      <DependentUpon>GroupDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Patients\PatientList.xaml.cs">
+      <DependentUpon>PatientList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PatientListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />
@@ -71,6 +84,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\ChatList\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Launch\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Chat\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\NewChat\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Patients\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\LoginPage.xaml">
@@ -94,6 +109,22 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Chat\ChatMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewChat\UserList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewChat\AddParticipant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewChat\GroupDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Patients\PatientList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

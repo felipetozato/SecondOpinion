@@ -36,7 +36,7 @@ namespace SecondOpinion.Models
         private IList<long> _deliveredIds;
         public IList<long> DeliveredIds {
             get => _deliveredIds;
-        }
+        } 
 
         [JsonProperty("recipient_id")]
         public long ToUserId {

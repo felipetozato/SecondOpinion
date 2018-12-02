@@ -22,6 +22,10 @@ namespace SecondOpinion.Droid
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
             AppInitializerViewModel.Initialize();
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+            };
+
         }
 
         public override void OnTerminate()

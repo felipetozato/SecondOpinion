@@ -10,17 +10,12 @@ using System.Reactive.Concurrency;
 namespace SecondOpinion.ViewModels {
     public class CreateGroupViewModel : BaseViewModel {
 
-        public IList<UserContact> SelectedUsers {
-            get;
-            set;
-        }
-
         public string GroupName {
             get;
             set;
         }
 
-        public ReactiveCommand<Unit, Unit> CreateGroup {
+        public ReactiveCommand<IList<UserContact>, Unit> CreateGroup {
             get;
             private set;
         }
@@ -29,22 +24,25 @@ namespace SecondOpinion.ViewModels {
 
         public event DialogEvent GoToDialogScreen;
 
+        public CreateGroupViewModel() {
+
+        }
+
         public CreateGroupViewModel (IScheduler scheduler = null) : base() {
-            CreateGroup = ReactiveCommand.CreateFromTask(HandleCreateGroup, null, scheduler);
+            CreateGroup = ReactiveCommand.CreateFromTask<IList<UserContact>>(HandleCreateGroup, null, scheduler);
         }
 
         protected virtual void OnGoToDialogScreen(Dialog dialog) {
             GoToDialogScreen?.Invoke(dialog);
         }
 
-        private async Task HandleCreateGroup() {
+        private async Task HandleCreateGroup(IList<UserContact> users) {
             //Validate group name
             if (string.IsNullOrWhiteSpace(GroupName)) {
                 return;
             }
-            var newDialog = await ApiCoordinator.CreateMessageGroup(GroupName , SelectedUsers);
+            var newDialog = await ApiCoordinator.CreateMessageGroup(GroupName , users);
             //Save in the future
-
             OnGoToDialogScreen(newDialog);
         } 
     }

@@ -53,5 +53,9 @@ namespace SecondOpinion.Models
                 Name = name
             };
         }
+
+        public override bool Equals (object obj) {
+            return Id.Equals(obj);
+        }
     }
 }

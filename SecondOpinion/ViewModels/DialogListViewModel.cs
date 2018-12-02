@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SecondOpinion.Repositories;
 using Splat;
 using SecondOpinion.Services.Api;
+using System.Linq;
 
 namespace SecondOpinion.ViewModels
 {
@@ -35,7 +36,8 @@ namespace SecondOpinion.ViewModels
         private void GetConversationFromServer() {
             Locator.CurrentMutable.GetService<IChatRepository>().GetAllDialogs()
                    .Subscribe(result => {
-                ChatList.AddRange(result);
+                var filteredItems = result.Except(ChatList);
+                ChatList.AddRange(filteredItems);
                 System.Diagnostics.Debug.WriteLine("WORKED");
             });
         }

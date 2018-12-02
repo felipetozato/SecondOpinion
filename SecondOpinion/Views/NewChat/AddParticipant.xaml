@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="SecondOpinion.Views.NewChat.AddParticipant"
+                    xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                    xmlns:viewModels="clr-namespace:SecondOpinion.ViewModels"
+                    xmlns:ui="clr-namespace:SecondOpinion.Views"
+                    x:TypeArguments="viewModels:UserListViewModel"
+                    Title="Add Participant">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="CreateButton" Order="Primary" Text="Criar"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="10" x:Name="layout" MarginTop="16">
+            <Label Text="Insira o nome do grupo" 
+                   HorizontalOptions="Center"
+                   Margin="0 16 0 16"/>
+            <Entry x:Name="GroupNameField"
+                   Margin="0 16 0 16"/>
+            <StackLayout BackgroundColor="#edf0f5"> 
+                <Label 
+                    Text="Participantes"
+                    TextColor="#8e8e93"
+                    MarginLeft="16"
+                    MarginTop="4"
+                    MarginBottom="4"/>
+            </StackLayout>
+            <ListView x:Name="ContactList"
+                  SeparatorColor="Silver"
+                  SeparatorVisibility="Default"
+                  CachingStrategy="RecycleElement"
+                  SelectionMode="None"
+                  RowHeight="50">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="4,4,8,4"
+                                     HorizontalOptions="Fill"
+                                     VerticalOptions="Fill">
+                            <Label x:Name="Username" FontSize="Medium" Text="{Binding Item.Name}"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalTextAlignment="Center"/>
+                            <Switch 
+                                IsToggled="{Binding Selected}"
+                                IsEnabled="true"
+                                HorizontalOptions="End" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ui:ContentPageBase>

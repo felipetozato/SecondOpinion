@@ -13,6 +13,7 @@ namespace SecondOpinion.iOS.UserList
 {
     public partial class AddParticipantsViewController : BaseTableViewController<UserListViewModel>
 	{
+
         public AddParticipantsViewController (IntPtr handle) {
             subscriptionDisposables = new CompositeDisposable();
         }
@@ -38,7 +39,7 @@ namespace SecondOpinion.iOS.UserList
             //Update UI
             var cell = tableView.CellAt(indexPath);
             cell.Accessory = UITableViewCellAccessory.Checkmark;
-            ViewModel.SelectItem.Execute(indexPath.Row);
+            //ViewModel.SelectItem.Execute(indexPath.Row);
         }
 
         public override void RowDeselected (UITableView tableView , NSIndexPath indexPath) {
@@ -46,7 +47,7 @@ namespace SecondOpinion.iOS.UserList
             //Update UI
             var cell = tableView.CellAt(indexPath);
             cell.Accessory = UITableViewCellAccessory.None;
-            ViewModel.DeselectItem.Execute(indexPath.Row);
+            //ViewModel.DeselectItem.Execute(indexPath.Row);
         }
 
         public override nint NumberOfSections (UITableView tableView) {

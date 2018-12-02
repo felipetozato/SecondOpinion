@@ -206,6 +206,11 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values-v19\styles.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
+    <AndroidResource Include="Resources\drawable-mdpi\Second.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Second.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Second.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Second.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Second.png" />
   </ItemGroup>
   <Import Project="..\SecondOpinion\SecondOpinion.projitems" Label="Shared" Condition="Exists('..\SecondOpinion\SecondOpinion.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

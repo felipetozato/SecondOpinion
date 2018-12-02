@@ -56,7 +56,7 @@ namespace SecondOpinion.iOS.UserList
             var storyBoard = UIStoryboard.FromName(StoryboardNames.CHAT, null);
             var viewController = storyBoard.InstantiateInitialViewController() as DialogViewController;
             var chat = new Dialog();
-            chat.User = user;
+            //chat.User = user;
             chat.Name = user.Name;
             viewController.SetChat(chat);
             NavigationController.SetViewControllers(new UIViewController[] {NavigationController.ViewControllers[0], viewController}, true);

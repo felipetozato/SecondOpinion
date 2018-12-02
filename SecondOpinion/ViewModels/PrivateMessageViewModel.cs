@@ -62,6 +62,9 @@ namespace SecondOpinion.ViewModels
         public DialogViewModel() {
             MessageList = new ReactiveList<Message>();
             SendMessageCommand = ReactiveCommand.CreateFromObservable<bool>(SendMessage);
+            SendMessageCommand.Subscribe(worked => {
+                MessageText = string.Empty;
+            });
         }
 
         public void Populate() {

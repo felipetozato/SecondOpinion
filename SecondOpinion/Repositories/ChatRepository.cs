@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Reactive.Linq;
@@ -20,6 +21,12 @@ namespace SecondOpinion.Repositories {
                 arg.OnNext(webData.Items);
                 arg.OnCompleted();
             });
+        }
+
+        public Dialog GetDialog (UserContact contact) {
+            var realm = Realm.GetInstance();
+            var result = realm.All<Dialog>();
+            return result.AsEnumerable().FirstOrDefault(dialog => dialog.OccupantsIds.Contains(contact.Id));
         }
 
         private IReadOnlyList<Dialog> GetAllDialogsFromLocal() {

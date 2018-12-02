@@ -5,5 +5,7 @@ namespace SecondOpinion.Repositories {
     
     public interface IChatRepository {
         IObservable<IEnumerable<Dialog>> GetAllDialogs();
+
+        Dialog GetDialog (UserContact contact);
     }
 }
