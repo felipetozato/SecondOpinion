@@ -12,11 +12,18 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="10" x:Name="layout" MarginTop="16">
-            <Label Text="Insira o nome do grupo" 
-                   HorizontalOptions="Center"
-                   Margin="0 16 0 16"/>
-            <Entry x:Name="GroupNameField"
-                   Margin="0 16 0 16"/>
+            <StackLayout Orientation="Horizontal" Margin="0 0 0 8">
+                <Frame BackgroundColor="Silver" CornerRadius="30">
+                    <ImageButton x:Name="AddPhoto" Source="AddPhoto" HeightRequest="15" Scale="1.5"/>
+                </Frame>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Insira o nome do grupo" 
+                       HorizontalOptions="Start"
+                       Margin="0 16 0 16"/>
+                    <Entry x:Name="GroupNameField"
+                           Margin="0 16 0 16"/> 
+                </StackLayout>
+            </StackLayout>
             <StackLayout BackgroundColor="#edf0f5"> 
                 <Label 
                     Text="Participantes"

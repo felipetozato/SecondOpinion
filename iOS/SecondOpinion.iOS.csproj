@@ -169,6 +169,12 @@
     <Reference Include="ReactiveUI.Events">
       <HintPath>..\packages\ReactiveUI.Events.8.7.2\lib\xamarinios10\ReactiveUI.Events.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.3.0.0.12\lib\xamarinios10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.4.0.1.5\lib\xamarinios10\Plugin.Media.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -228,6 +234,14 @@
     <ImageAsset Include="Assets.xcassets\Image.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\Second.png" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\Secon2.png" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100.png" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-1.png" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-2.png" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-3.png" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-4.png" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-5.png" />
+    <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-6.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -287,10 +301,12 @@
     <Folder Include="Assets.xcassets\addGroup.imageset\" />
     <Folder Include="Assets.xcassets\group-solid.imageset\" />
     <Folder Include="Assets.xcassets\user-solid.imageset\" />
+    <Folder Include="Assets.xcassets\AddPhoto.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\en.lproj\Localizable.strings" />
     <BundleResource Include="Resources\pt.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\pt.lproj\InfoPlist.strings" />
   </ItemGroup>
   <Import Project="..\SecondOpinion\SecondOpinion.projitems" Label="Shared" Condition="Exists('..\SecondOpinion\SecondOpinion.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

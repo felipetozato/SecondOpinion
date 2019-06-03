@@ -5,6 +5,7 @@ using ReactiveUI;
 using SecondOpinion.ViewModels;
 using Xamarin.Forms;
 using SecondOpinion.Views.Chat;
+using Plugin.Media;
 
 namespace SecondOpinion.Views.NewChat {
     public partial class AddParticipant : ContentPageBase<UserListViewModel> {
@@ -35,6 +36,7 @@ namespace SecondOpinion.Views.NewChat {
             GroupNameField.TextChanged += (object sender , TextChangedEventArgs e) => {
                 groupViewModel.GroupName = e.NewTextValue;
             };
+            AddPhoto.Clicked += AddPhoto_Clicked;
         }
 
         void Next_Clicked (object sender , EventArgs e) {
@@ -63,5 +65,22 @@ namespace SecondOpinion.Views.NewChat {
                          //});
             });
         }
+
+        async void AddPhoto_Clicked (object sender , EventArgs e) {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsPickPhotoSupported) {
+                DisplayAlert("No Gallery" , ":( No gallery available." , "OK");
+                return;
+            }
+
+            var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
+                CompressionQuality = 90
+            });
+
+            AddPhoto.Source = ImageSource.FromFile(file.Path);
+        }
+
     }
 }
