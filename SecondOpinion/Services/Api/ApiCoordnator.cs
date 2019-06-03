@@ -7,6 +7,7 @@ using SecondOpinion.Repositories;
 using Splat;
 using System.Collections.Generic;
 using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace SecondOpinion.Services.Api
 {
@@ -17,6 +18,7 @@ namespace SecondOpinion.Services.Api
         readonly static ILoginApi loginApi;
         readonly static IChatApi chatApi;
         readonly static IUserApi userApi;
+        readonly static IPatientApi patientApi;
         readonly static ISettingsRepository userSettings;
         readonly static ISharedPreferences sharedPreferences;
 
@@ -35,6 +37,7 @@ namespace SecondOpinion.Services.Api
             loginApi = RestService.For<ILoginApi>(httpClient);
             chatApi = RestService.For<IChatApi>(httpClient);
             userApi = RestService.For<IUserApi>(httpClient);
+            patientApi = RestService.For<IPatientApi>(httpClient);
         }
 
         /// <summary>
@@ -78,6 +81,10 @@ namespace SecondOpinion.Services.Api
             var usersIds = users.Select(user => user.Id).ToList();
             var bodyRequest = new CreateGroupRequest(groupName, usersIds);
             return chatApi.CreateGroupDialog(bodyRequest);
+        }
+
+        public static Task<List<JObject>> GetAllPatients() {
+            return patientApi.GetAllPatients();
         }
 
         private static string GetToken() {

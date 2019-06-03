@@ -6,11 +6,13 @@
     <NavigationPage Title="Conversas" Icon="First.png">
         <x:Arguments>
             <chatlist:DialogListPage />
+            
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Pacientes" Icon="Second.png">
         <x:Arguments>
             <patients:PatientList />
+            
         </x:Arguments>
     </NavigationPage>
 </TabbedPage>

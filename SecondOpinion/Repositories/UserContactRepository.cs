@@ -16,8 +16,8 @@ namespace SecondOpinion.Repositories {
 			//Get from local first
             return Observable.Create(async (IObserver<IEnumerable<UserContact>> arg) => {
                 //load local first
-                var localData = GetAllFromLocal();
-                arg.OnNext(localData);
+                //var localData = GetAllFromLocal();
+                //arg.OnNext(localData);
                 //load Internet stuff
                 var webData = await GetAllFromWeb();
                 arg.OnNext(webData.Items);

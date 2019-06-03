@@ -14,16 +14,20 @@
                   SeparatorColor="Silver"
                   SeparatorVisibility="Default"
                   CachingStrategy="RecycleElement"
-                  RowHeight="70">
+                  RowHeight="70"
+                  SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"
                                      Padding="4,4,8,4">
-                            <Frame CornerRadius="32" Margin="4" Padding="0" IsClippedToBounds="true"
+                            <Frame CornerRadius="28" Margin="4" Padding="0" IsClippedToBounds="true"
                                    HeightRequest="60" WidthRequest="60" VerticalOptions="Center"
                                    BackgroundColor="Silver">
-                                <Image x:Name="Image" Source="{Binding PhotoToShow}" Margin="4"/>    
+                                <Image x:Name="Image" Source="{Binding PhotoToShow}" 
+                                       Aspect="AspectFill"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"/>    
                             </Frame>
                             <StackLayout Orientation="Vertical" VerticalOptions="Center">
                                 <Label Text="{Binding Name}" TextColor="Black"/>

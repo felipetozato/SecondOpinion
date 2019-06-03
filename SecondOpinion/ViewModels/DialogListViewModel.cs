@@ -7,6 +7,9 @@ using SecondOpinion.Repositories;
 using Splat;
 using SecondOpinion.Services.Api;
 using System.Linq;
+using Xamarin.Forms;
+using System.Windows.Input;
+using System.Reactive.Linq;
 
 namespace SecondOpinion.ViewModels
 {

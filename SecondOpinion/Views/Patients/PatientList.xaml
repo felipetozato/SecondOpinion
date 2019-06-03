@@ -6,17 +6,19 @@
              xmlns:viewModels="clr-namespace:SecondOpinion.ViewModels"
              xmlns:ui="clr-namespace:SecondOpinion.Views"
              x:TypeArguments="viewModels:PatientListViewModel"
-             Title="Chat">
+             Title="Pacientes">
     <ContentPage.Content>
-        <ListView x:Name="PatientList"
+        <ListView x:Name="PatientListView"
                   SeparatorColor="Silver"
                   SeparatorVisibility="Default"
                   CachingStrategy="RecycleElement"
-                  RowHeight="60">
+                  RowHeight="55">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="UserName" />i
+                        <Label Text="{ Binding Name }" MarginLeft="16"
+                               FontSize="Large"
+                               VerticalOptions="Center"/>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

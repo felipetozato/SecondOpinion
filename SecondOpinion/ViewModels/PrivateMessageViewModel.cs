@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Splat;
 using SecondOpinion.Repositories;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace SecondOpinion.ViewModels
 {
@@ -29,6 +31,29 @@ namespace SecondOpinion.ViewModels
         public ReactiveList<Message> MessageList {
             get;
             private set;
+        }
+
+        private bool _isRefreshing = false;
+        public bool IsRefreshing {
+            get { return _isRefreshing; }
+            set {
+                _isRefreshing = value;
+                this.RaiseAndSetIfChanged(ref _isRefreshing , value);
+            }
+        }
+
+        public ICommand RefreshCommand {
+            get {
+                return new Command(async () => {
+                    IsRefreshing = true;
+
+                    var filteredItems = await ApiCoordinator.GetPrivateMessages(Chat.Id);
+                    MessageList.Clear();
+                    MessageList.AddRange(filteredItems.Items);
+
+                    IsRefreshing = false;
+                });
+            }
         }
 
         public UserLogin CurrentUserLogin {
@@ -86,9 +111,9 @@ namespace SecondOpinion.ViewModels
                 return Observable.Return(false);
             }
             var messageBody = Chat.Id != null ?
-                CreateChatDialogMessage(Chat.Id, _MessageText) :
-                                  Create1o1Message(Chat.OccupantsIds.First(id => this.Chat.UserId != id) , _MessageText);
-            
+                CreateChatDialogMessage(Chat.Id , _MessageText) :
+                Create1o1Message(Chat.OccupantsIds.First(id => this.Chat.UserId != id) , _MessageText);
+
             return SendMessage(messageBody);
         }
 
@@ -109,6 +134,7 @@ namespace SecondOpinion.ViewModels
         private IObservable<bool> SendMessage(Message message) {
             return Observable.FromAsync(async () => {
                 var result = await ApiCoordinator.SendPrivateMessage(message);
+                Chat.Id = result.ChatDialogId;
                 result.Dialog = Chat;
                 MessageList.Add(result);
                 return true;

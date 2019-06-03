@@ -15,7 +15,9 @@
                   SeparatorVisibility="None"
                   CachingStrategy="RecycleElement"
                   HasUnevenRows="true"
-                  SelectionMode="None">
+                  SelectionMode="None"
+                  IsPullToRefreshEnabled="True"
+                  IsRefreshing="{Binding IsRefreshing}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" >

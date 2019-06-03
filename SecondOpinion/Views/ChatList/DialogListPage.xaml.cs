@@ -16,8 +16,7 @@ namespace SecondOpinion.Views.ChatList {
             InitializeComponent();
             Init();
             SubscribeToViewModel();
-            ViewModel.Populate();
-            this.DialogList.BindingContext = ViewModel.ChatList;
+            this.DialogList.BindingContext = ViewModel;
         }
 
         void Init() {
@@ -25,27 +24,36 @@ namespace SecondOpinion.Views.ChatList {
             DialogList.ItemsSource = ViewModel.ChatList;
         }
 
+        protected override void OnAppearing () {
+            base.OnAppearing();
+            ViewModel.Populate();
+            DialogList.ItemTapped += ItemTappedHandler;
+        }
+
+        protected override void OnDisappearing () {
+            base.OnDisappearing();
+            DialogList.ItemTapped -= ItemTappedHandler;
+        }
+
         void NewChatButton_Clicked (object sender , EventArgs e) {
             var newMessageScreen = new UserList(this.Navigation);
             Navigation.PushModalAsync(new NavigationPage(newMessageScreen) , true);
         }
 
-        private void SubscribeToViewModel() {
-            this.WhenActivated(disposables => {
-                DialogList.ItemSelected += (sender, e) => {
-                    var dialog = e.SelectedItem as Dialog;
-                    var chatPage = new ChatPage(dialog);
-                    this.Navigation.PushAsync(chatPage);
-                };
+        private void SubscribeToViewModel () => this.WhenActivated(disposables => {
+            ViewModel.ChatList.Changed
+                     .Where(list => list != null && list.NewItems.Count > 0)
+                     .ObserveOn(RxApp.MainThreadScheduler)
+                     .Subscribe(chatList => {
+                             //DialogList.ItemsSource = null;
+                             //DialogList.ItemsSource = chatList.NewItems;
+                         });
+        });
 
-                ViewModel.ChatList.Changed
-                         .Where(list => list != null && list.NewItems.Count > 0)
-                         .ObserveOn(RxApp.MainThreadScheduler)
-                         .Subscribe(chatList => {
-                    //DialogList.ItemsSource = null;
-                    //DialogList.ItemsSource = chatList.NewItems;
-                });
-            });
+        private void ItemTappedHandler(object sender, ItemTappedEventArgs e) {
+            var dialog = e.Item as Dialog;
+            var chatPage = new ChatPage(dialog);
+            this.Navigation.PushAsync(chatPage);
         }
     }
 }

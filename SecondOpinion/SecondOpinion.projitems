@@ -74,6 +74,11 @@
       <DependentUpon>PatientList.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PatientListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Api\IPatientApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Patient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Patients\PatientDetail.xaml.cs">
+      <DependentUpon>PatientDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />
@@ -125,6 +130,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Patients\PatientList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Patients\PatientDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

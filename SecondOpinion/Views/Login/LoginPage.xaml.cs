@@ -25,6 +25,8 @@ namespace SecondOpinion.Views.Login {
         private void OnLoginResult(bool worked) {
             if (worked) {
                 Navigation.PushModalAsync(new MainTabbedPage());
+            } else {
+                DisplayAlert("Erro ao realizar o login" , "E-mail e/ou senha inválidos. Tente novamente" , "Ok");
             }
         }
     }

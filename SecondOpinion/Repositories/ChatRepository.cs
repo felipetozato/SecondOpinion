@@ -26,7 +26,11 @@ namespace SecondOpinion.Repositories {
         public Dialog GetDialog (UserContact contact) {
             var realm = Realm.GetInstance();
             var result = realm.All<Dialog>();
-            return result.AsEnumerable().FirstOrDefault(dialog => dialog.OccupantsIds.Contains(contact.Id));
+            if (result == null || result.Count() == 0) {
+                return null;
+            } else {
+                return result.AsEnumerable().FirstOrDefault(dialog => dialog.OccupantsIds?.Contains(contact.Id) ?? false);
+            }
         }
 
         private IReadOnlyList<Dialog> GetAllDialogsFromLocal() {

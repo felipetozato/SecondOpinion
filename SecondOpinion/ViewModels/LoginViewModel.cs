@@ -37,15 +37,20 @@ namespace SecondOpinion.ViewModels
             var email = EmailAddress.Trim();
             var password = Password.Trim();
             if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password)) {
-                var worked = await ApiCoordinator.Login(email, password);
-                if (worked != null) {
-                    System.Diagnostics.Debug.WriteLine("SUCCESS!!!");
-                    await UserSettings.SaveOrUpdateUserLogin(worked);
-                    sharedPreferences.SetString(PreferencesKeys.EMAIL, EmailAddress);
-                    sharedPreferences.SetString(PreferencesKeys.PASSWORD, Password);
-                    return true;
-                } else {
-                    System.Diagnostics.Debug.WriteLine("DID NOT WORKED!!!");
+                try {
+                    var worked = await ApiCoordinator.Login(email , password);
+                    if (worked != null) {
+                        System.Diagnostics.Debug.WriteLine("SUCCESS!!!");
+                        await UserSettings.SaveOrUpdateUserLogin(worked);
+                        sharedPreferences.SetString(PreferencesKeys.EMAIL , EmailAddress);
+                        sharedPreferences.SetString(PreferencesKeys.PASSWORD , Password);
+                        return true;
+                    } else {
+                        System.Diagnostics.Debug.WriteLine("DID NOT WORKED!!!");
+                        return false;
+                    }
+                } catch (Exception ex) {
+                    System.Diagnostics.Debug.Fail($"Message: {ex.Message}");
                     return false;
                 }
             }

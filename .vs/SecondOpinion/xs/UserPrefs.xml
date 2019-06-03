@@ -1,10 +1,40 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
-  <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D7823C4B-2301-4F6D-9060-D6FA5EB235FA" />
+  <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A75C0452-8C22-4FFC-A5A8-DCA29F16BA61" />
   <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/ChatList/DialogListPage.xaml">
     <Files>
-      <File FileName="SecondOpinion/Views/Patients/PatientList.xaml" Line="8" Column="62" />
-      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml" Line="21" Column="9" />
+      <File FileName="SecondOpinion/ViewModels/PatientListViewModel.cs" Line="28" Column="1" />
+      <File FileName="SecondOpinion/Services/Api/ApiCoordnator.cs" Line="80" Column="100" />
+      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" />
+      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml.cs" Line="28" Column="21" />
+      <File FileName="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" Line="113" Column="48" />
+      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml" />
+      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml.cs" Line="24" Column="51" />
+      <File FileName="SecondOpinion/ViewModels/DialogListViewModel.cs" Line="19" Column="33" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SecondOpinion" expanded="True">
+            <Node name="SecondOpinion" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="ChatList" expanded="True">
+                  <Node name="DialogListPage.xaml" expanded="True" selected="True" />
+                </Node>
+                <Node name="Login" expanded="True">
+                  <Node name="LoginPage.xaml" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="SecondOpinion.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
@@ -16,6 +46,7 @@
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/iOS/Views/LoadViewController.cs" relfile="iOS/Views/LoadViewController.cs" line="19" column="1" />
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/Chat/Chat.xaml.cs" relfile="SecondOpinion/Views/Chat/Chat.xaml.cs" line="34" column="1" />
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/CreateGroupViewModel.cs" relfile="SecondOpinion/ViewModels/CreateGroupViewModel.cs" line="44" column="1" />
+      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PrivateMessageViewModel.cs" relfile="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" line="48" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
