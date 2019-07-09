@@ -1,34 +1,35 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
   <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A75C0452-8C22-4FFC-A5A8-DCA29F16BA61" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Resources/pt.lproj/Localizable.strings">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/Patients/PatientHistory.xaml">
     <Files>
-      <File FileName="SecondOpinion/ViewModels/PatientListViewModel.cs" Line="28" Column="1" />
-      <File FileName="SecondOpinion/Services/Api/ApiCoordnator.cs" Line="80" Column="100" />
-      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" />
-      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml.cs" Line="28" Column="21" />
-      <File FileName="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" Line="113" Column="48" />
-      <File FileName="SecondOpinion/Views/NewChat/AddParticipant.xaml" />
-      <File FileName="SecondOpinion/Views/NewChat/AddParticipant.xaml.cs" Line="60" Column="17" />
-      <File FileName="iOS/Resources/pt.lproj/Localizable.strings" Line="1" Column="1" />
+      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" Line="1" Column="1" />
+      <File FileName="iOS/Main.cs" />
+      <File FileName="SecondOpinion/Views/Patients/PatientHistory.xaml.cs" />
+      <File FileName="SecondOpinion/Views/Patients/PatientHistory.xaml" Line="19" Column="27" />
+      <File FileName="SecondOpinion/ViewModels/PatientHistoryViewModel.cs" Line="52" Column="48" />
+      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml" Line="17" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SecondOpinion" expanded="True">
             <Node name="SecondOpinion" expanded="True">
+              <Node name="Models" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="NewChat" expanded="True">
-                  <Node name="AddParticipant.xaml" expanded="True" />
+                <Node name="ChatList" expanded="True">
+                  <Node name="DialogListPage.xaml" expanded="True" />
+                </Node>
+                <Node name="Login" expanded="True" />
+                <Node name="Patients" expanded="True">
+                  <Node name="PatientHistory.xaml" expanded="True" selected="True" />
                 </Node>
               </Node>
             </Node>
             <Node name="SecondOpinion.iOS" expanded="True">
               <Node name="Resources" expanded="True">
                 <Node name="en.lproj" expanded="True" />
-                <Node name="pt.lproj" expanded="True">
-                  <Node name="Localizable.strings" selected="True" />
-                </Node>
+                <Node name="pt.lproj" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -52,6 +53,7 @@
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PrivateMessageViewModel.cs" relfile="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" line="48" column="1" />
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/ChatList/DialogListPage.xaml" relfile="SecondOpinion/Views/ChatList/DialogListPage.xaml" line="25" column="1" />
       <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/ChatList/DialogListPage.xaml" relfile="SecondOpinion/Views/ChatList/DialogListPage.xaml" line="21" column="1" />
+      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PatientHistoryViewModel.cs" relfile="SecondOpinion/ViewModels/PatientHistoryViewModel.cs" line="74" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

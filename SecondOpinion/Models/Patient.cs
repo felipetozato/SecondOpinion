@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 namespace SecondOpinion.Models {
 
     public class Patient {
 
-        public const string NAME_KEY = "Patient"; 
+        public const string NAME_KEY = "Patient";
 
+        [JsonProperty("name")]
         public string Name {
             get;
             private set;

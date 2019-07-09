@@ -24,7 +24,7 @@ namespace SecondOpinion.Views.Patients {
             PatientListView.ItemTapped += (sender, e) => {
                 System.Diagnostics.Debug.WriteLine(e.Item);
                 var patient = e.Item as Patient;
-                var detailPage = new PatientDetail(patient);
+                var detailPage = new PatientHistory(patient.Name);
                 Navigation.PushAsync(detailPage , true);
             };
         }

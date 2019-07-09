@@ -19,13 +19,9 @@ namespace SecondOpinion.ViewModels {
             PatientList = new ReactiveList<Patient>();
         }
 
-        public async Task LoadPatients() {
-            var patientsData = await ApiCoordinator.GetAllPatients();
-            var parsedDataList = patientsData.Select((arg) => {
-                var name = arg.GetValue(Patient.NAME_KEY).ToString();
-                return new Patient(name , arg);
-            });
-            PatientList.AddRange(parsedDataList);
+        public async Task LoadPatients () {
+            List<Patient> patients = await ApiCoordinator.GetAllPatients();
+            PatientList.AddRange(patients);
         }
     }
 }

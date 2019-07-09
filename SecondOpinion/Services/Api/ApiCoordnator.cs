@@ -83,8 +83,12 @@ namespace SecondOpinion.Services.Api
             return chatApi.CreateGroupDialog(bodyRequest);
         }
 
-        public static Task<List<JObject>> GetAllPatients() {
+        public static Task<List<Patient>> GetAllPatients() {
             return patientApi.GetAllPatients();
+        }
+
+        public static Task<Dictionary<string, List<PatientData>>> GetPatientData(string name) {
+            return patientApi.GetPatientData(name);
         }
 
         private static string GetToken() {
