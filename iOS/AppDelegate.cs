@@ -32,6 +32,8 @@ namespace SecondOpinion.iOS
 		}
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
+            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
+
             Forms.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             KeyboardOverlapRenderer.Init();
