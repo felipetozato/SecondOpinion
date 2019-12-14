@@ -10,11 +10,11 @@ namespace SecondOpinion.Views {
     {
         protected readonly CompositeDisposable SubscriptionDisposables = new CompositeDisposable();
 
-        protected ContentPageBase() {
+        public ContentPageBase() {
             ViewModel = (TViewModel) Activator.CreateInstance(typeof(TViewModel));
         }
 
-        protected ContentPageBase(params object[] viewModelParameters) {
+        public ContentPageBase(params object[] viewModelParameters) {
             ViewModel = (TViewModel) Activator.CreateInstance(typeof(TViewModel), viewModelParameters);
         }
 

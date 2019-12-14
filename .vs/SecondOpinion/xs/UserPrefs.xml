@@ -1,44 +1,11 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
-  <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A75C0452-8C22-4FFC-A5A8-DCA29F16BA61" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/Patients/PatientHistory.xaml">
+  <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C4C89BA5-83A2-4A7D-A883-BFB00966F729" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/Login/LoginPage.xaml">
     <Files>
-      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" Line="1" Column="1" />
-      <File FileName="iOS/Main.cs" />
-      <File FileName="SecondOpinion/Views/Patients/PatientHistory.xaml.cs" />
-      <File FileName="SecondOpinion/Views/Patients/PatientHistory.xaml" Line="19" Column="27" />
-      <File FileName="SecondOpinion/ViewModels/PatientHistoryViewModel.cs" Line="52" Column="48" />
-      <File FileName="SecondOpinion/Views/ChatList/DialogListPage.xaml" Line="17" Column="19" />
+      <File FileName="SecondOpinion/Models/Dialog.cs" Line="1" Column="1" />
+      <File FileName="iOS/obj/iPhoneSimulator/Debug/LoginPage.xaml.g.cs" />
+      <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" Line="23" Column="31" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="SecondOpinion" expanded="True">
-            <Node name="SecondOpinion" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="ChatList" expanded="True">
-                  <Node name="DialogListPage.xaml" expanded="True" />
-                </Node>
-                <Node name="Login" expanded="True" />
-                <Node name="Patients" expanded="True">
-                  <Node name="PatientHistory.xaml" expanded="True" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="SecondOpinion.iOS" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="en.lproj" expanded="True" />
-                <Node name="pt.lproj" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
@@ -47,13 +14,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/iOS/Views/LoadViewController.cs" relfile="iOS/Views/LoadViewController.cs" line="19" column="1" />
-      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/Chat/Chat.xaml.cs" relfile="SecondOpinion/Views/Chat/Chat.xaml.cs" line="34" column="1" />
-      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/CreateGroupViewModel.cs" relfile="SecondOpinion/ViewModels/CreateGroupViewModel.cs" line="44" column="1" />
-      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PrivateMessageViewModel.cs" relfile="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" line="48" column="1" />
-      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/ChatList/DialogListPage.xaml" relfile="SecondOpinion/Views/ChatList/DialogListPage.xaml" line="25" column="1" />
-      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/Views/ChatList/DialogListPage.xaml" relfile="SecondOpinion/Views/ChatList/DialogListPage.xaml" line="21" column="1" />
-      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PatientHistoryViewModel.cs" relfile="SecondOpinion/ViewModels/PatientHistoryViewModel.cs" line="74" column="1" />
+      <Breakpoint file="/Users/felipecantagalli/Code/SecondOpinion/SecondOpinion/ViewModels/PatientHistoryViewModel.cs" relfile="SecondOpinion/ViewModels/PatientHistoryViewModel.cs" line="102" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
