@@ -21,6 +21,7 @@ namespace SecondOpinion.ViewModels {
 
         public async Task LoadPatients () {
             List<Patient> patients = await ApiCoordinator.GetAllPatients();
+            PatientList.Clear();
             PatientList.AddRange(patients);
         }
     }

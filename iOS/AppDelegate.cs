@@ -33,6 +33,7 @@ namespace SecondOpinion.iOS
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
             Forms.Init();
+            OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             KeyboardOverlapRenderer.Init();
             AppInitializerViewModel.Initialize();
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
