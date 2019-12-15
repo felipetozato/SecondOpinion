@@ -1,22 +1,33 @@
 ﻿<Properties StartupConfiguration="{D5FFD993-7880-4C70-A381-D07BF67FCC05}|Default">
   <MonoDevelop.Ide.ItemProperties.SecondOpinion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.76E461E7-1E04-43B9-A36E-1084A322F3B6" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SecondOpinion/Views/Chat/ChatPage.xaml.cs">
     <Files>
       <File FileName="SecondOpinion/Models/Dialog.cs" Line="1" Column="1" />
       <File FileName="iOS/obj/iPhoneSimulator/Debug/LoginPage.xaml.g.cs" />
       <File FileName="SecondOpinion/Views/Login/LoginPage.xaml" Line="10" Column="21" />
-      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml" Line="26" Column="37" />
-      <File FileName="iOS/AppDelegate.cs" Line="36" Column="1" />
+      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml" Line="34" Column="17" />
+      <File FileName="SecondOpinion/Views/Chat/ChatPage.xaml.cs" Line="28" Column="1" />
+      <File FileName="SecondOpinion/ViewModels/PrivateMessageViewModel.cs" Line="154" Column="122" />
+      <File FileName="iOS/Main.cs" Line="11" Column="1" />
+      <File FileName="iOS/Main.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SecondOpinion" expanded="True">
-            <Node name="SecondOpinion" expanded="True" />
+            <Node name="SecondOpinion" expanded="True">
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Chat" expanded="True">
+                  <Node name="ChatPage.xaml" expanded="True">
+                    <Node name="ChatPage.xaml.cs" selected="True" />
+                  </Node>
+                </Node>
+                <Node name="Login" expanded="True" />
+              </Node>
+            </Node>
             <Node name="SecondOpinion.iOS" expanded="True">
               <Node name="Packages" expanded="True" />
-              <Node name="AppDelegate.cs" selected="True" />
             </Node>
           </Node>
         </State>

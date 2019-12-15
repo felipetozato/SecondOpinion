@@ -33,6 +33,14 @@ namespace SecondOpinion.ViewModels
             private set;
         }
 
+        /// <summary>
+        /// Gets the suggestion list
+        /// </summary>
+        public ReactiveList<String> SuggestionList {
+            get;
+            private set;
+        }
+
         private bool _isRefreshing = false;
         public bool IsRefreshing {
             get { return _isRefreshing; }
@@ -96,6 +104,7 @@ namespace SecondOpinion.ViewModels
             // Load existing messages
             GetMessages(Chat.Id);
             CurrentUserLogin = Locator.CurrentMutable.GetService<ISettingsRepository>().GetUserLogin();
+            GetSuggestionList();
         }
 
         private void GetMessages(string dialogId) {
@@ -139,6 +148,10 @@ namespace SecondOpinion.ViewModels
                 MessageList.Add(result);
                 return true;
             });
+        }
+
+        private void GetSuggestionList() {
+            SuggestionList = new ReactiveList<string>() { "AAA" , "BBB" , "CCC", "DDD", "EEE", "FFF", "GGG", "HHH", "III" };
         }
     }
 }

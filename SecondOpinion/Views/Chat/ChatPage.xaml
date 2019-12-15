@@ -32,7 +32,15 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                          Margin="6">
                 <!--<Entry x:Name="MessageEditText" HorizontalOptions="FillAndExpand"/>-->
-                <autocomplete:SfAutoComplete x:Name="MessageEditText" HorizontalOptions="FillAndExpand" HeightRequest="40"/>
+                <autocomplete:SfAutoComplete x:Name="MessageEditText"
+                                             HorizontalOptions="FillAndExpand" HeightRequest="40"
+                                             DisplayMemberPath="Name"
+                                             AutoCompleteMode="Suggest"
+                                             MultiSelectMode="Delimiter"
+                                             Delimiter=" "
+                                             TokensWrapMode="Wrap"
+                                             IsSelectedItemsVisibleInDropDown="False"
+                                             DataSource="{Binding SuggestionList}"/>
                 <Button x:Name="SendMessageButton" Image="second" Text="Send"
                         Margin="4, 0, 0, 0"/>
             </StackLayout>
