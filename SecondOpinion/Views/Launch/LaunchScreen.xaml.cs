@@ -34,7 +34,7 @@ namespace SecondOpinion.Views.Launch {
         }
 
         private void SetAsMainScreen(Page page) {
-            Navigation.PushModalAsync(page);
+            Navigation.PushModalAsync(page, true);
         }
     }
 }

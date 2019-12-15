@@ -14,6 +14,7 @@
             <ListView
                   x:Name="MessageList"
                   SeparatorVisibility="None"
+                  VerticalOptions="StartAndExpand"
                   CachingStrategy="RecycleElement"
                   HasUnevenRows="true"
                   SelectionMode="None"
@@ -29,17 +30,20 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
-                         Margin="6">
-                <!--<Entry x:Name="MessageEditText" HorizontalOptions="FillAndExpand"/>-->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="6">
                 <autocomplete:SfAutoComplete x:Name="MessageEditText"
-                                             HorizontalOptions="FillAndExpand" HeightRequest="40"
-                                             DisplayMemberPath="Name"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="Center"
                                              AutoCompleteMode="Suggest"
                                              MultiSelectMode="Delimiter"
                                              Delimiter=" "
-                                             TokensWrapMode="Wrap"
-                                             IsSelectedItemsVisibleInDropDown="False"
+                                             MaximumSuggestion="3"
+                                             SearchDelay="600"
+                                             SuggestionBoxPlacement="Top"
+                                             DropDownCornerRadius="10"
+                                             ShowClearButton="True"
+                                             DropDownBackgroundColor="AliceBlue"
+                                             SuggestionMode="Custom"
                                              DataSource="{Binding SuggestionList}"/>
                 <Button x:Name="SendMessageButton" Image="second" Text="Send"
                         Margin="4, 0, 0, 0"/>
