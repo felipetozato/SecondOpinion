@@ -18,5 +18,8 @@ namespace SecondOpinion.Services.Api {
 
         [Post("/chat/group_dialog")]
         Task<Dialog> CreateGroupDialog ([Body] CreateGroupRequest createGroup);
+
+        [Get("/chat/suggestions?doctor_id={doctorId}")]
+        Task<IList<string>> GetSuggestionList (string doctorId);
     }
 }

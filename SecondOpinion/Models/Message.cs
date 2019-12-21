@@ -44,6 +44,12 @@ namespace SecondOpinion.Models
             set;
         }
 
+        [JsonProperty("sender_id")]
+        public long SenderId {
+            get;
+            set;
+        }
+
         [JsonProperty("message")]
         public string MessageBody {
             get;

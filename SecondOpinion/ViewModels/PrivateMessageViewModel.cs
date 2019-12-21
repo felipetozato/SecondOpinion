@@ -11,6 +11,7 @@ using Splat;
 using SecondOpinion.Repositories;
 using System.Windows.Input;
 using Xamarin.Forms;
+using SecondOpinion.Repositories.Intefaces;
 
 namespace SecondOpinion.ViewModels
 {
@@ -29,6 +30,14 @@ namespace SecondOpinion.ViewModels
         /// </summary>
         /// <value>The message list.</value>
         public ReactiveList<Message> MessageList {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// Gets the suggestion list
+        /// </summary>
+        public ReactiveList<String> SuggestionList {
             get;
             private set;
         }
@@ -86,6 +95,7 @@ namespace SecondOpinion.ViewModels
         /// <param name="userToChat">User to chat.</param>
         public DialogViewModel() {
             MessageList = new ReactiveList<Message>();
+            SuggestionList = new ReactiveList<string>();
             SendMessageCommand = ReactiveCommand.CreateFromObservable<bool>(SendMessage);
             SendMessageCommand.Subscribe(worked => {
                 MessageText = string.Empty;
@@ -96,6 +106,7 @@ namespace SecondOpinion.ViewModels
             // Load existing messages
             GetMessages(Chat.Id);
             CurrentUserLogin = Locator.CurrentMutable.GetService<ISettingsRepository>().GetUserLogin();
+            GetSuggestionList();
         }
 
         private void GetMessages(string dialogId) {
@@ -111,23 +122,25 @@ namespace SecondOpinion.ViewModels
                 return Observable.Return(false);
             }
             var messageBody = Chat.Id != null ?
-                CreateChatDialogMessage(Chat.Id , _MessageText) :
-                Create1o1Message(Chat.OccupantsIds.First(id => this.Chat.UserId != id) , _MessageText);
+                CreateChatDialogMessage(Chat.Id, Chat.UserId, _MessageText) :
+                Create1o1Message(Chat.OccupantsIds.First(id => this.Chat.UserId != id), this.Chat.UserId, _MessageText);
 
             return SendMessage(messageBody);
         }
 
-        private Message Create1o1Message(long recipientId , string message) {
+        private Message Create1o1Message(long recipientId, long senderId, string message) {
             return new Message() {
-                ToUserId = recipientId ,
-                MessageBody = message
+                ToUserId = recipientId,
+                MessageBody = message,
+                SenderId = senderId
             };
         }
 
-        private Message CreateChatDialogMessage(String chatDialogId, string message) {
+        private Message CreateChatDialogMessage(String chatDialogId, long senderId, string message) {
             return new Message() {
                 ChatDialogId = chatDialogId ,
-                MessageBody = message
+                MessageBody = message,
+                SenderId = senderId
             };
         }
 
@@ -139,6 +152,16 @@ namespace SecondOpinion.ViewModels
                 MessageList.Add(result);
                 return true;
             });
+        }
+
+        private void GetSuggestionList() {
+            var repository = Locator.CurrentMutable.GetService<ISuggestionRepository>();
+            Observable.FromAsync(() => repository.GetSuggestionList(CurrentUserLogin.userInfo.Name))
+                .Subscribe(onNext: list => {
+                    SuggestionList.AddRange(list);
+                }, onError: ex => {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                });
         }
     }
 }

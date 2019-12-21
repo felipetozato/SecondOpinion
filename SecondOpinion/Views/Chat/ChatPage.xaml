@@ -7,12 +7,14 @@
                     xmlns:ui="clr-namespace:SecondOpinion.Views"
                     xmlns:chat="clr-namespace:SecondOpinion.Views.Chat"
                     x:TypeArguments="viewModels:DialogViewModel"
+                    xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
                     Title="{Binding Chat.Name}">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <ListView
                   x:Name="MessageList"
                   SeparatorVisibility="None"
+                  VerticalOptions="StartAndExpand"
                   CachingStrategy="RecycleElement"
                   HasUnevenRows="true"
                   SelectionMode="None"
@@ -28,9 +30,21 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
-                         Margin="6">
-                <Entry x:Name="MessageEditText" HorizontalOptions="FillAndExpand"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="6">
+                <autocomplete:SfAutoComplete x:Name="MessageEditText"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="Center"
+                                             AutoCompleteMode="Suggest"
+                                             MultiSelectMode="Delimiter"
+                                             Delimiter=" "
+                                             MaximumSuggestion="3"
+                                             SearchDelay="200"
+                                             SuggestionBoxPlacement="Top"
+                                             DropDownCornerRadius="10"
+                                             ShowClearButton="True"
+                                             DropDownBackgroundColor="AliceBlue"
+                                             SuggestionMode="Custom"
+                                             DataSource="{Binding SuggestionList}"/>
                 <Button x:Name="SendMessageButton" Image="second" Text="Send"
                         Margin="4, 0, 0, 0"/>
             </StackLayout>

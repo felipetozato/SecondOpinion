@@ -23,6 +23,8 @@ namespace SecondOpinion.iOS
             set;
         }
 
+        private const string SYNC_FUSION_KEY = "MTgxOTU2QDMxMzcyZTMzMmUzMG9STEtRbU1tcU92TjViUVNjdWNXZ01lcGpBZDI4aWFieXJUbnpETGU2U1E9";
+
 
         private AppInitializerViewModel viewModel;
 
@@ -32,6 +34,10 @@ namespace SecondOpinion.iOS
 		}
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(SYNC_FUSION_KEY);
+
+            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
+
             Forms.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             KeyboardOverlapRenderer.Init();
@@ -39,6 +45,9 @@ namespace SecondOpinion.iOS
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
                 System.Diagnostics.Debug.WriteLine(e.ToString());
             };
+
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
             var viewController = new LaunchScreen().CreateViewController();
             SetAsMainScreen(viewController);
             return true;
