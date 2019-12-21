@@ -9,5 +9,6 @@ namespace SecondOpinion.Services.Api
     {
         [Post("/login")]
         Task<UserLogin> Login([Body] LoginRequest loginRequest);
+
     }
 }

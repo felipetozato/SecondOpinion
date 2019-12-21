@@ -81,6 +81,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Patients\PatientHistory.xaml.cs">
       <DependentUpon>PatientHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\ISuggestionRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\SuggestionRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />

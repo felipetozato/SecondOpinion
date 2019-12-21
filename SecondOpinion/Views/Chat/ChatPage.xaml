@@ -38,7 +38,7 @@
                                              MultiSelectMode="Delimiter"
                                              Delimiter=" "
                                              MaximumSuggestion="3"
-                                             SearchDelay="600"
+                                             SearchDelay="200"
                                              SuggestionBoxPlacement="Top"
                                              DropDownCornerRadius="10"
                                              ShowClearButton="True"

@@ -49,6 +49,12 @@ namespace SecondOpinion.Models
             set;
         }
 
+        [JsonProperty("user_login")]
+        public UserInfo userInfo {
+            get;
+            set;
+        }
+
         public string Email {
             get;
             set;

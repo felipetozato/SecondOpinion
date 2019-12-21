@@ -9,6 +9,7 @@ using ReactiveUI;
 using System.Threading;
 using System.Reactive.Linq;
 using SecondOpinion.ViewModels;
+using SecondOpinion.Repositories.Intefaces;
 
 namespace SecondOpinion.ViewModels
 {
@@ -24,6 +25,7 @@ namespace SecondOpinion.ViewModels
             Locator.CurrentMutable.RegisterLazySingleton(() => new SettingsRepository(), typeof(ISettingsRepository));
             Locator.CurrentMutable.RegisterLazySingleton(() => new UserContactRepository(), typeof(IUserContactRepository));
             Locator.CurrentMutable.RegisterLazySingleton(() => new ChatRepository(), typeof(IChatRepository));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new SuggestionRepository() , typeof(ISuggestionRepository));
             Locator.CurrentMutable.RegisterConstant(new SharedPreferencesRepository(), typeof(ISharedPreferences));
 
             initialized = true;

@@ -91,6 +91,10 @@ namespace SecondOpinion.Services.Api
             return patientApi.GetPatientData(name);
         }
 
+        public static Task<IList<string>> GetSuggestionList(string userId) {
+            return chatApi.GetSuggestionList(userId);
+        }
+
         private static string GetToken() {
             var userLogin = userSettings.GetUserLogin();
             if (userLogin != null) {
