@@ -70,8 +70,8 @@ namespace SecondOpinion.ViewModels {
                         PlotAreaBorderColor = OxyColor.FromRgb(0xE1 , 0xE1 , 0xE1)
                     };
                     var dates = entry.Value.Select(i => DateTime.Parse(i.HappenedAt));
-                    var min = DateTime.Parse("08/12/2019 09:00:00");
-                    var max = DateTime.Parse("08/12/2019 19:00:00");
+                    var min = dates.Min(); //DateTime.Parse("08/12/2019 09:00:00");
+                    var max = dates.Max(); //DateTime.Parse("08/12/2019 19:00:00");
                     chart.Axes.Add(new LinearAxis {
                         Position = AxisPosition.Left ,
                         MajorGridlineStyle = LineStyle.Solid ,
@@ -91,7 +91,7 @@ namespace SecondOpinion.ViewModels {
                         TickStyle = TickStyle.Outside ,
                         TicklineColor = OxyColor.FromRgb(0xE1 , 0xE1 , 0xE1) ,
                         IsZoomEnabled = true ,
-                        MajorStep = 2.0 / 24 / 1 , // 1/24 = 1 hour, 1/24/2 = 30 minutes,
+                        MajorStep = 1.0 , // 1/24 = 1 hour, 1/24/2 = 30 minutes,
                     });
                     chart.Series.Add(CreateLineSeries(entry.Value , dates));
                     list.Add(new HistoryItem(chart , entry.Key));
@@ -118,13 +118,17 @@ namespace SecondOpinion.ViewModels {
             };
             
             List<Item> ii = new List<Item>();
-            var time = DateTime.Parse("08/12/2019 10:00:00");
-            ii.Add(new Item { X = time , Y = 101.0 });
-            ii.Add(new Item { X = time.AddHours(4) , Y = 125.0 });
-            ii.Add(new Item { X = time.AddHours(8) , Y = 110.0 });
-            //foreach (var item in dates) {
-            //    ii.Add(new Item { X = item , Y = Double.Parse(item.ToString()) });
-            //}
+            //var time = DateTime.Parse("08/12/2019 10:00:00");
+            //ii.Add(new Item { X = time , Y = 101.0 });
+            //ii.Add(new Item { X = time.AddHours(4) , Y = 125.0 });
+            //ii.Add(new Item { X = time.AddHours(8) , Y = 110.0 });
+            foreach (var item in data) {
+                try {
+                    ii.Add(new Item { X = DateTime.Parse(item.HappenedAt) , Y = Double.Parse(item.Data) });
+                } catch (ArgumentNullException) {
+                    continue;
+                }
+            }
             serie.ItemsSource = ii;
             return serie;
         }

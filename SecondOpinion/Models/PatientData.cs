@@ -4,7 +4,7 @@ using Newtonsoft.Json.Serialization;
 namespace SecondOpinion.Models {
     public class PatientData {
 
-        [JsonProperty("Value")]
+        [JsonProperty("ValorExames")]
         public string Data {
             get;
             set;
