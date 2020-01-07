@@ -92,7 +92,7 @@ namespace SecondOpinion.ViewModels {
                         TickStyle = TickStyle.Outside ,
                         TicklineColor = OxyColor.FromRgb(0xE1 , 0xE1 , 0xE1) ,
                         IsZoomEnabled = true ,
-                        MajorStep = 1.0 , // 1/24 = 1 hour, 1/24/2 = 30 minutes,
+                        //MajorStep = 1.0 , // 1/24 = 1 hour, 1/24/2 = 30 minutes,
                     });
                     chart.Series.Add(CreateLineSeries(entry.Value , dates));
                     list.Add(new HistoryItem(chart , entry.Key));
