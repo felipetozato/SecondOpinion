@@ -45,7 +45,7 @@ namespace SecondOpinion.Models
         }
 
         [JsonProperty("sender_id")]
-        public long SenderId {
+        public string SenderId {
             get;
             set;
         }

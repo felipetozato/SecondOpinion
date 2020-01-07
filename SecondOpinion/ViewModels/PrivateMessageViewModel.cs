@@ -122,13 +122,13 @@ namespace SecondOpinion.ViewModels
                 return Observable.Return(false);
             }
             var messageBody = Chat.Id != null ?
-                CreateChatDialogMessage(Chat.Id, Chat.UserId, _MessageText) :
-                Create1o1Message(Chat.OccupantsIds.First(id => this.Chat.UserId != id), this.Chat.UserId, _MessageText);
+                CreateChatDialogMessage(Chat.Id, CurrentUserLogin.userInfo.Name, _MessageText) :
+                Create1o1Message(Chat.OccupantsIds.First(id => this.Chat.UserId != id), CurrentUserLogin.userInfo.Name, _MessageText);
 
             return SendMessage(messageBody);
         }
 
-        private Message Create1o1Message(long recipientId, long senderId, string message) {
+        private Message Create1o1Message(long recipientId, string senderId, string message) {
             return new Message() {
                 ToUserId = recipientId,
                 MessageBody = message,
@@ -136,7 +136,7 @@ namespace SecondOpinion.ViewModels
             };
         }
 
-        private Message CreateChatDialogMessage(String chatDialogId, long senderId, string message) {
+        private Message CreateChatDialogMessage(String chatDialogId, string senderId, string message) {
             return new Message() {
                 ChatDialogId = chatDialogId ,
                 MessageBody = message,
