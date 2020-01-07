@@ -76,7 +76,7 @@ namespace SecondOpinion.ViewModels {
                         Position = AxisPosition.Left ,
                         MajorGridlineStyle = LineStyle.Solid ,
                         MajorGridlineColor = OxyColor.FromRgb(0xE1 , 0xE1 , 0xE1) ,
-                        MinorGridlineStyle = LineStyle.None ,
+                        MinorGridlineStyle = LineStyle.None,
                         AxislineThickness = 1 ,
                         TickStyle = TickStyle.Crossing ,
                         TicklineColor = OxyColor.FromRgb(0xE1 , 0xE1 , 0xE1)
@@ -85,7 +85,8 @@ namespace SecondOpinion.ViewModels {
                         Position = AxisPosition.Bottom ,
                         Minimum = DateTimeAxis.ToDouble(min) ,
                         Maximum = DateTimeAxis.ToDouble(max) ,
-                        StringFormat = "HH'h' M/d" ,
+                        StringFormat = "dd/MM" ,
+                        IntervalType = DateTimeIntervalType.Auto,
                         MajorGridlineStyle = LineStyle.None ,
                         MinorGridlineStyle = LineStyle.None ,
                         TickStyle = TickStyle.Outside ,
