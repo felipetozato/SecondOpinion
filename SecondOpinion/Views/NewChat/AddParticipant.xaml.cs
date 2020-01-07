@@ -78,8 +78,9 @@ namespace SecondOpinion.Views.NewChat {
                 PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
                 CompressionQuality = 90
             });
-
-            AddPhoto.Source = ImageSource.FromFile(file.Path);
+            if (file?.Path != null) {
+                AddPhoto.Source = ImageSource.FromFile(file.Path);
+            }
         }
 
     }

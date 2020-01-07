@@ -39,7 +39,7 @@ namespace SecondOpinion.Models
         } 
 
         [JsonProperty("recipient_id")]
-        public long ToUserId {
+        public Nullable<long> ToUserId {
             get;
             set;
         }
@@ -64,6 +64,12 @@ namespace SecondOpinion.Models
 
         [JsonProperty("read")]
         public bool Read {
+            get;
+            set;
+        }
+
+        [JsonProperty("name")]
+        public string Name {
             get;
             set;
         }
