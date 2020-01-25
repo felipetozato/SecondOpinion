@@ -12,6 +12,8 @@ using SecondOpinion.Repositories;
 using System.Windows.Input;
 using Xamarin.Forms;
 using SecondOpinion.Repositories.Intefaces;
+using System.Timers;
+using System.Reactive.Concurrency;
 
 namespace SecondOpinion.ViewModels
 {
@@ -20,10 +22,16 @@ namespace SecondOpinion.ViewModels
         /// <summary>
         /// The user to chat with
         /// </summary>
+        private Dialog _Dialog;
         public Dialog Chat {
-            get;
-            set;
+            get => _Dialog;
+            set {
+                _Dialog = value;
+                DialogId = value.Id;
+            }
         }
+
+        private String DialogId = "";
 
         /// <summary>
         /// Gets the message list.
@@ -89,6 +97,8 @@ namespace SecondOpinion.ViewModels
             set;
         }
 
+        private Timer timer;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="T:SecondOpinion.ViewModels.PrivateChatViewModel"/> class.
         /// </summary>
@@ -107,13 +117,22 @@ namespace SecondOpinion.ViewModels
             GetMessages(Chat.Id);
             CurrentUserLogin = Locator.CurrentMutable.GetService<ISettingsRepository>().GetUserLogin();
             GetSuggestionList();
+            timer = new Timer() {
+                Interval = 4000,
+                AutoReset = false,
+                Enabled = false
+            };
+            timer.Elapsed += ElapsedTime;
+
         }
 
         private void GetMessages(string dialogId) {
             Observable.FromAsync(() => ApiCoordinator.GetPrivateMessages(dialogId))
                       .Where(page => page.Items.Count > 0)
                       .Subscribe(page => {
-                MessageList.AddRange(page.Items);
+                          MessageList.AddRange(page.Items);
+                          timer.Enabled = true;
+                          timer.Start();
             });
         }
 
@@ -162,6 +181,35 @@ namespace SecondOpinion.ViewModels
                 }, onError: ex => {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 });
+        }
+
+        override public void Dispose () {
+            base.Dispose();
+            if (timer != null) {
+                timer.Close();
+                timer.Dispose();
+                timer.Elapsed -= ElapsedTime;
+            }
+        }
+
+        private async void ElapsedTime(object sender, ElapsedEventArgs args) {
+            System.Diagnostics.Debug.WriteLine("Elasped TIME!!!!");
+            var page = await ApiCoordinator.GetPrivateMessages(DialogId);
+            var newItems = page.Items.Except(MessageList);
+            if (newItems.Count() > 0) {
+                MessageList.AddRange(newItems);
+            }
+            timer.Start();
+            //Observable.FromAsync(() => ApiCoordinator.GetPrivateMessages(Chat.Id))
+            //          .Select(page => {
+            //              return page.Items.Except(MessageList);
+            //          })
+            //          .Subscribe(list => {
+            //              timer.Start();
+            //              if (list.Count() > 0) {
+            //                  MessageList.AddRange(list);
+            //              }
+            //          });
         }
     }
 }

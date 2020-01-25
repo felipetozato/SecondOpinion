@@ -6,7 +6,7 @@ using Realms;
 
 namespace SecondOpinion.Models
 {
-    public class Message : RealmObject {
+    public class Message : RealmObject, IEquatable<Message> {
 
         [PrimaryKey]
         [JsonProperty("_id")]
@@ -91,6 +91,22 @@ namespace SecondOpinion.Models
 
         public Message() {
             
+        }
+
+        public override bool Equals (object obj) {
+            if (obj.GetType() == typeof(Message)) {
+                return ((Message) obj).Id == this.Id;
+            } else {
+                return false;
+            }
+        }
+
+        public override int GetHashCode () {
+            return Id.GetHashCode();
+        }
+
+        public bool Equals (Message other) {
+            return other.Id == this.Id;
         }
     }
 }

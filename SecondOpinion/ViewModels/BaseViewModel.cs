@@ -6,7 +6,7 @@ using Splat;
 
 namespace SecondOpinion.ViewModels
 {
-    public class BaseViewModel : ReactiveObject
+    public class BaseViewModel : ReactiveObject, IDisposable
     {
         /// <summary>
         /// The router.
@@ -18,6 +18,10 @@ namespace SecondOpinion.ViewModels
         public BaseViewModel() {
             //Router = Locator.Current.GetService<IRouter>();
             UserSettings = Locator.Current.GetService<ISettingsRepository>();
+        }
+
+        public virtual void Dispose () {
+            
         }
     }
 }

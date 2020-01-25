@@ -21,6 +21,7 @@ namespace SecondOpinion.Views {
         protected override void OnDisappearing() {
             base.OnDisappearing();
             SubscriptionDisposables.Clear();
+            ViewModel.Dispose();
         }
     }
 }
