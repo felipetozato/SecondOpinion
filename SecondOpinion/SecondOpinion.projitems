@@ -84,6 +84,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\Intefaces\ISuggestionRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\SuggestionRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MessageProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QbProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApplicationKeys.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Api\" />

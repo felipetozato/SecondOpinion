@@ -40,6 +40,7 @@ namespace SecondOpinion.iOS
 
             Forms.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
+            Quickblox.Sdk.Platform.QuickbloxPlatform.Init();
             KeyboardOverlapRenderer.Init();
             AppInitializerViewModel.Initialize();
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
@@ -50,6 +51,7 @@ namespace SecondOpinion.iOS
 
             var viewController = new LaunchScreen().CreateViewController();
             SetAsMainScreen(viewController);
+
             return true;
         }
 

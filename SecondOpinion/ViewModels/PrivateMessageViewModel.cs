@@ -12,10 +12,13 @@ using SecondOpinion.Repositories;
 using System.Windows.Input;
 using Xamarin.Forms;
 using SecondOpinion.Repositories.Intefaces;
+using SecondOpinion.Services;
 
 namespace SecondOpinion.ViewModels
 {
     public class DialogViewModel : BaseViewModel {
+
+        private MessageProvider provider;
 
         /// <summary>
         /// The user to chat with
@@ -100,6 +103,7 @@ namespace SecondOpinion.ViewModels
             SendMessageCommand.Subscribe(worked => {
                 MessageText = string.Empty;
             });
+            provider = new MessageProvider();
         }
 
         public void Populate() {
@@ -107,6 +111,7 @@ namespace SecondOpinion.ViewModels
             GetMessages(Chat.Id);
             CurrentUserLogin = Locator.CurrentMutable.GetService<ISettingsRepository>().GetUserLogin();
             GetSuggestionList();
+            //provider.
         }
 
         private void GetMessages(string dialogId) {

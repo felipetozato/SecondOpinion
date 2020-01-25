@@ -214,6 +214,21 @@
     <Reference Include="Syncfusion.SfAutoComplete.XForms.iOS">
       <HintPath>packages\Syncfusion.Xamarin.SfAutoComplete.17.3.0.34\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.XForms.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Sockets.Plugin.Abstractions">
+      <HintPath>..\packages\rda.SocketsForPCL.1.2.2\lib\Xamarin.iOS10\Sockets.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sockets.Plugin">
+      <HintPath>..\packages\rda.SocketsForPCL.1.2.2\lib\Xamarin.iOS10\Sockets.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Quickblox.Sdk">
+      <HintPath>..\packages\Quickblox.Sdk.1.2.7\lib\Xamarin.iOS10\Quickblox.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Quickblox.Sdk.Platform.Abstractions">
+      <HintPath>..\packages\Quickblox.Sdk.1.2.7\lib\Xamarin.iOS10\Quickblox.Sdk.Platform.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Quickblox.Sdk.Platform.iOS">
+      <HintPath>..\packages\Quickblox.Sdk.1.2.7\lib\Xamarin.iOS10\Quickblox.Sdk.Platform.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
