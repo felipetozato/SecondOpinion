@@ -23,7 +23,7 @@ namespace SecondOpinion.iOS
             set;
         }
 
-        private const string SYNC_FUSION_KEY = "MTgxOTU2QDMxMzcyZTMzMmUzMG9STEtRbU1tcU92TjViUVNjdWNXZ01lcGpBZDI4aWFieXJUbnpETGU2U1E9";
+        private const string SYNC_FUSION_KEY = "MjA2MjU3QDMxMzcyZTM0MmUzME5sK2c3QmU3YngvbVliZElSZUJhbzIzcXhYcDNyWGJDb051QlVQa0Q0Rk09";
 
 
         private AppInitializerViewModel viewModel;
