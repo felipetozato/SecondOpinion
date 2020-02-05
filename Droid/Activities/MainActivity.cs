@@ -39,11 +39,11 @@ namespace SecondOpinion.Droid
                 fragment?.BecameVisible();
             };
 
-            Toolbar.MenuItemClick += (sender, e) =>
-            {
-                var intent = new Intent(this, typeof(AddItemActivity)); ;
-                StartActivity(intent);
-            };
+            //Toolbar.MenuItemClick += (sender, e) =>
+            //{
+            //    var intent = new Intent(this, typeof(AddItemActivity)); ;
+            //    StartActivity(intent);
+            //};
 
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
             SupportActionBar.SetHomeButtonEnabled(false);
@@ -74,7 +74,7 @@ namespace SecondOpinion.Droid
         {
             switch (position)
             {
-                case 0: return BrowseFragment.NewInstance();
+                //case 0: return BrowseFragment.NewInstance();
                 case 1: return AboutFragment.NewInstance();
             }
             return null;
