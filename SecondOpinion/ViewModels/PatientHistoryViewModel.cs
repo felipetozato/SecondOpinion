@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Reactive.Subjects;
 using SecondOpinion.Models;
 using System.Reactive.Linq;
 using SecondOpinion.Services.Api;
 using System.Collections.Generic;
 using ReactiveUI;
-using SkiaSharp;
-using System.Collections;
 using System.Threading.Tasks;
 using OxyPlot;
 using OxyPlot.Series;
 using OxyPlot.Axes;
 using System.Linq;
-using SecondOpinion.Views;
 
 namespace SecondOpinion.ViewModels {
 

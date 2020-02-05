@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Reactive;
 using ReactiveUI;
 using System.Threading.Tasks;
 using SecondOpinion.Repositories;
 using Splat;
 using SecondOpinion.Services.Api;
+using System.Reactive;
 
 namespace SecondOpinion.ViewModels
 {
@@ -23,7 +23,7 @@ namespace SecondOpinion.ViewModels
             set => this.RaiseAndSetIfChanged(ref _password, value);
         }
 
-        public ReactiveCommand<Unit, bool> LoginCommand;
+        public ReactiveCommand<Unit , bool> LoginCommand;
 
         private ISharedPreferences sharedPreferences;
 

@@ -3,9 +3,6 @@ using System.Threading.Tasks;
 using System.Linq;
 using Realms;
 using SecondOpinion.Models;
-using System.Threading;
-using System.Reactive.Linq;
-using System.Reactive.Concurrency;
 
 namespace SecondOpinion.Repositories
 {

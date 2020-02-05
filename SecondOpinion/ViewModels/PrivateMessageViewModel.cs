@@ -5,7 +5,6 @@ using ReactiveUI;
 using System.Reactive;
 using System.Reactive.Linq;
 using SecondOpinion.Services.Api;
-using System.Collections.Generic;
 using System.Linq;
 using Splat;
 using SecondOpinion.Repositories;
@@ -13,7 +12,6 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using SecondOpinion.Repositories.Intefaces;
 using System.Timers;
-using System.Reactive.Concurrency;
 
 namespace SecondOpinion.ViewModels
 {
