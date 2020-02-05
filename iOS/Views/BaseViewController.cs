@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Reactive.Disposables;
 using ReactiveUI;
+using System.Reactive.Disposables;
 
 using UIKit;
 
