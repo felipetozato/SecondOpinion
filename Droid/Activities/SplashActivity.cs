@@ -14,7 +14,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace SecondOpinion.Droid
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/MasterDetailTheme" , MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashActivity : FormsAppCompatActivity {
 
         public static string FolderPath { get; private set; }
@@ -33,7 +33,7 @@ namespace SecondOpinion.Droid
 
             AppInitializerViewModel.Initialize();
 
-            CrossCurrentActivity.Current.Init(this.Application);
+            CrossCurrentActivity.Current.Init(Application);
 
             AppDomain.CurrentDomain.UnhandledException += (sender , e) => {
                 System.Diagnostics.Debug.WriteLine(e.ToString());
@@ -47,11 +47,6 @@ namespace SecondOpinion.Droid
             FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
 
             LoadApplication(new XamApplication());
-            //Android.Support.V4.App.Fragment mainPage = new LaunchScreen().CreateSupportFragment(this);
-            //SupportFragmentManager
-            //    .BeginTransaction()
-            //    .Replace(Resource.Id.container, mainPage)
-            //    .Commit();
         }
 
 

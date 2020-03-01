@@ -75,7 +75,7 @@ namespace SecondOpinion.Models {
         public string PhotoToShow {
             get {
                 if (Photo != null) return Photo;
-                return Type.Equals(ChatType.PrivateChat) ? "user-solid" : "group-solid";
+                return Type.Equals(ChatType.PrivateChat) ? "userSolid" : "groupSolid";
             }
         }
 

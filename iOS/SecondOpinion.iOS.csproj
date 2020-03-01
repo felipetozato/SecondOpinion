@@ -258,18 +258,6 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\user-solid.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\user-solid.imageset\user-solid.pdf">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\group-solid.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\group-solid.imageset\group-solid.pdf">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Image.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\Second.png" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\Secon2.png" />
@@ -281,6 +269,18 @@
     <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-4.png" />
     <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-5.png" />
     <ImageAsset Include="Assets.xcassets\AddPhoto.imageset\icons8-câmera-compacta-100-6.png" />
+    <ImageAsset Include="Assets.xcassets\groupSolid.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\groupSolid.imageset\group-solid.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\userSolid.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\userSolid.imageset\user-solid.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -338,9 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\addGroup.imageset\" />
-    <Folder Include="Assets.xcassets\group-solid.imageset\" />
-    <Folder Include="Assets.xcassets\user-solid.imageset\" />
     <Folder Include="Assets.xcassets\AddPhoto.imageset\" />
+    <Folder Include="Assets.xcassets\groupSolid.imageset\" />
+    <Folder Include="Assets.xcassets\userSolid.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\en.lproj\Localizable.strings" />

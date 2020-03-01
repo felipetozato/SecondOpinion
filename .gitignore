@@ -42,3 +42,5 @@ Thumbs.db
 #vs
 .vs/
 .vs/SecondOpinion/xs/UserPrefs.xml
+
+Droid/Resources/Resource.designer.cs
