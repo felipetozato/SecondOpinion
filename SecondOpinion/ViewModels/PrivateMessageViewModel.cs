@@ -126,9 +126,10 @@ namespace SecondOpinion.ViewModels
 
         private void GetMessages(string dialogId) {
             Observable.FromAsync(() => ApiCoordinator.GetPrivateMessages(dialogId))
-                      .Where(page => page.Items.Count > 0)
                       .Subscribe(page => {
-                          MessageList.AddRange(page.Items);
+                          if (page.Items.Count > 0) {
+                              MessageList.AddRange(page.Items);
+                          }
                           timer.Enabled = true;
                           timer.Start();
             });
