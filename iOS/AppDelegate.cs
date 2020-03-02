@@ -7,6 +7,9 @@ using SecondOpinion.ViewModels;
 using SecondOpinion.Views.Launch;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using System;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace SecondOpinion.iOS
 {
@@ -34,6 +37,9 @@ namespace SecondOpinion.iOS
 		}
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
+            AppCenter.Start("bca33005-cfef-486e-ae2b-5237cd93a727" ,
+                   typeof(Analytics) , typeof(Crashes));
+
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(SYNC_FUSION_KEY);
 
             new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
