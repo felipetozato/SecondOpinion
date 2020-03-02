@@ -45,7 +45,7 @@
                                              DropDownBackgroundColor="AliceBlue"
                                              SuggestionMode="Custom"
                                              DataSource="{Binding SuggestionList}"/>
-                <Button x:Name="SendMessageButton" Image="second" Text="Send"
+                <Button x:Name="SendMessageButton" Image="Send" Text="Send"
                         Margin="4, 0, 0, 0"/>
             </StackLayout>
         </StackLayout>

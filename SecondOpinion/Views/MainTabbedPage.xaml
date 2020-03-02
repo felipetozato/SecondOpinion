@@ -4,13 +4,12 @@
             xmlns:chatlist="clr-namespace:SecondOpinion.Views.ChatList"
             xmlns:patients="clr-namespace:SecondOpinion.Views.Patients"
             >
-    <NavigationPage Title="Conversas" Icon="First.png">
+    <NavigationPage Title="Conversas" Icon="First">
         <x:Arguments>
             <chatlist:DialogListPage />
-            
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Pacientes" Icon="Second.png">
+    <NavigationPage Title="Pacientes" Icon="Second">
         <x:Arguments>
             <patients:PatientList />
             

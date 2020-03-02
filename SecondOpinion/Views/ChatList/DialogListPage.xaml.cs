@@ -9,6 +9,7 @@ using SecondOpinion.Models;
 using SecondOpinion.Views.Chat;
 using System.Reactive.Disposables;
 using SecondOpinion.Views.NewChat;
+using Microsoft.AppCenter.Crashes;
 
 namespace SecondOpinion.Views.ChatList {
     public partial class DialogListPage : ContentPageBase<DialogListViewModel> {
