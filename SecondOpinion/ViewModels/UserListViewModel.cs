@@ -66,7 +66,7 @@ namespace SecondOpinion.ViewModels
         private bool _selected;
         public bool Selected {
             get => _selected;
-            private set => this.RaiseAndSetIfChanged(ref _selected , value);
+            set => this.RaiseAndSetIfChanged(ref _selected , value);
         }
 
         public UserContact Item {

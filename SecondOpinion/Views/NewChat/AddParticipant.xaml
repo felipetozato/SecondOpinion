@@ -48,7 +48,7 @@
                                    HorizontalOptions="StartAndExpand"
                                    VerticalTextAlignment="Center"/>
                             <Switch 
-                                IsToggled="{Binding Selected}"
+                                IsToggled="{Binding Selected, Mode=TwoWay}"
                                 IsEnabled="true"
                                 HorizontalOptions="End" />
                         </StackLayout>

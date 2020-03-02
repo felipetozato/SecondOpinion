@@ -82,6 +82,5 @@ namespace SecondOpinion.Views.NewChat {
                 AddPhoto.Source = ImageSource.FromFile(file.Path);
             }
         }
-
     }
 }
