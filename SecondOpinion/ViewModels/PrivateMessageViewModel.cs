@@ -127,7 +127,7 @@ namespace SecondOpinion.ViewModels
         private void GetMessages(string dialogId) {
             Observable.FromAsync(() => ApiCoordinator.GetPrivateMessages(dialogId))
                       .Subscribe(page => {
-                          if (page.Items.Count > 0) {
+                          if (page != null && page.Items.Count > 0) {
                               MessageList.AddRange(page.Items);
                           }
                           timer.Enabled = true;
@@ -166,6 +166,7 @@ namespace SecondOpinion.ViewModels
             return Observable.FromAsync(async () => {
                 var result = await ApiCoordinator.SendPrivateMessage(message);
                 Chat.Id = result.ChatDialogId;
+                DialogId = result.ChatDialogId;
                 result.Dialog = Chat;
                 MessageList.Add(result);
                 return true;
@@ -194,9 +195,11 @@ namespace SecondOpinion.ViewModels
         private async void ElapsedTime(object sender, ElapsedEventArgs args) {
             System.Diagnostics.Debug.WriteLine("Elasped TIME!!!!");
             var page = await ApiCoordinator.GetPrivateMessages(DialogId);
-            var newItems = page.Items.Except(MessageList);
-            if (newItems.Count() > 0) {
-                MessageList.AddRange(newItems);
+            if (page != null) {
+                var newItems = page.Items.Except(MessageList);
+                if (newItems.Count() > 0) {
+                    MessageList.AddRange(newItems);
+                }
             }
             timer.Start();
             //Observable.FromAsync(() => ApiCoordinator.GetPrivateMessages(Chat.Id))

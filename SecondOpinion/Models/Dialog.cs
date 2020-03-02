@@ -40,7 +40,7 @@ namespace SecondOpinion.Models {
         }
 
         [JsonProperty("type")]
-        public int Type {
+        public int DialogChatType {
             get;
             set;
         }
@@ -75,7 +75,7 @@ namespace SecondOpinion.Models {
         public string PhotoToShow {
             get {
                 if (Photo != null) return Photo;
-                return Type.Equals(ChatType.PrivateChat) ? "userSolid" : "groupSolid";
+                return ((int) ChatType.PrivateChat).Equals(this.DialogChatType) ? "userSolid" : "groupSolid";
             }
         }
 
@@ -92,7 +92,7 @@ namespace SecondOpinion.Models {
         public Dialog(long[] users, long currentUserId, ChatType type, string name) {
             _occupantsIds = users;
             UserId = currentUserId;
-            Type = (int) type;
+            DialogChatType = (int) type;
             Name = name;
         }
 
