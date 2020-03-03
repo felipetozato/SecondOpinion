@@ -186,9 +186,11 @@ namespace SecondOpinion.ViewModels
         override public void Dispose () {
             base.Dispose();
             if (timer != null) {
+                timer.Stop();
                 timer.Close();
                 timer.Dispose();
                 timer.Elapsed -= ElapsedTime;
+                timer = null;
             }
         }
 

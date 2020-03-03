@@ -7,6 +7,7 @@ namespace SecondOpinion.Views.Chat {    public partial class ChatPage : Content
         }
         protected override void OnDisappearing () {
             base.OnDisappearing();            MessageList.Refreshing -= RefreshingMethod;
+            ViewModel.Dispose();
         }
         private async void RefreshingMethod(object sender, EventArgs e) {
             MessageList.IsRefreshing = true;
@@ -14,7 +15,7 @@ namespace SecondOpinion.Views.Chat {    public partial class ChatPage : Content
             ViewModel.MessageList.Clear();
             ViewModel.MessageList.AddRange(filteredItems.Items);
             MessageList.IsRefreshing = false;
-        }        private void AddMessageToTableView(IList<Message> list) {            this.MessageList.ItemsSource = list.OrderBy(x => x.Id)                .Select(message => new {MessageBody = message.MessageBody, MessageColor = GetColor(message)});        }                private void AddMessageToTableView (NotifyCollectionChangedEventArgs eventArgs) {            this.MessageList.ItemsSource = ViewModel.MessageList.OrderBy(x => x.Id)                .Select(message => new { MessageBody = message.MessageBody , MessageColor = GetColor(message) });        }        private Color GetColor(Message message) {            return currentUser.UserId == message.ToUserId ? ColorUtils.MessageBlue : ColorUtils.MessageGreen;        }        private bool MessageEditTextFilter(string search, object item) {
+        }        private void AddMessageToTableView(IList<Message> list) {            this.MessageList.ItemsSource = list.OrderBy(x => x.Id)                .Select(message => new {MessageBody = message.MessageBody, MessageColor = GetColor(message)});        }                private void AddMessageToTableView (NotifyCollectionChangedEventArgs eventArgs) {            this.MessageList.ItemsSource = ViewModel.MessageList.OrderBy(x => x.Id)                .Select(message => new { MessageBody = message.MessageBody , MessageColor = GetColor(message) });        }        private Color GetColor(Message message) {            return currentUser.UserId.ToString() == message.SenderId ? ColorUtils.MessageBlue : ColorUtils.MessageGreen;        }        private bool MessageEditTextFilter(string search, object item) {
             string text = item.ToString().ToLower();
             if (search?.Length >= 2 && text != null) {
                 return text.StartsWith(search.ToLower());
