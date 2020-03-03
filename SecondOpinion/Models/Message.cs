@@ -69,7 +69,7 @@ namespace SecondOpinion.Models
         }
 
         [JsonProperty("sender_name")]
-        public string Name {
+        public string SenderName {
             get;
             set;
         }
