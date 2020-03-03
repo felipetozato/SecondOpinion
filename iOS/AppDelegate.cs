@@ -44,6 +44,10 @@ namespace SecondOpinion.iOS
 
             new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
 
+            var realmConfiguration = new Realms.RealmConfiguration();
+            realmConfiguration.ShouldDeleteIfMigrationNeeded = true;
+            Realms.RealmConfiguration.DefaultConfiguration = realmConfiguration;
+
             Forms.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             KeyboardOverlapRenderer.Init();

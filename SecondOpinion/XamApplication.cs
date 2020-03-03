@@ -14,6 +14,10 @@ namespace SecondOpinion {
                   "ios=bca33005-cfef-486e-ae2b-5237cd93a727",
                   typeof(Analytics) , typeof(Crashes));
 
+            var realmConfiguration = new Realms.RealmConfiguration();
+            realmConfiguration.ShouldDeleteIfMigrationNeeded = true;
+            Realms.RealmConfiguration.DefaultConfiguration = realmConfiguration;
+
             MainPage = new LaunchScreen();
         }
 

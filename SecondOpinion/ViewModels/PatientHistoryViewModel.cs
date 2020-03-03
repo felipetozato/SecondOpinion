@@ -57,6 +57,7 @@ namespace SecondOpinion.ViewModels {
         public async Task GetPatientData() {
             try {
                 var patientData = await ApiCoordinator.GetPatientData(PatientName).ConfigureAwait(true);
+                GraphItems.Clear();
                 var list = new List<HistoryItem>();
                 foreach (KeyValuePair<string , List<PatientData>> entry in patientData) {
                     var chart = new PlotModel {
